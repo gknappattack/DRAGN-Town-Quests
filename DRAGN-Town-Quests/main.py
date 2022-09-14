@@ -3,6 +3,7 @@ from neo4j_interface.Neo4jDAO import Neo4jDAO
 import json
 import requests
 import sys
+from datetime import datetime
 
 # Step 2 imports
 from nltk.corpus import stopwords
@@ -27,6 +28,7 @@ possible_relationships = ['located_in', 'has', 'protected_by'] # expand on this 
 
 # Imports for language model and processing quest
 from transformers import pipeline
+from transformers.utils import logging
 
 data = {
     "exploration": ["Where should I go for an adventure?",
@@ -62,9 +64,13 @@ class Neo_Node:
     def __init__(self, name, properties):
         self.name = name
         self.properties = properties
+        self.type = None
 
     def set_name(self, name):
         self.name = name
+
+    def set_type(self, type):
+        self.type = type
 
     def set_properties(self, properties):
         self.properties = properties
@@ -74,6 +80,9 @@ class Neo_Node:
         
     def get_properties(self):
         return self.properties
+    
+    def get_type(self):
+        return self.type
 
 
 ### TODO: Port all of this functionality to separate classes to keep main clean.
@@ -86,10 +95,6 @@ class QuestEngine:
         self.generator = pipeline('text-generation', model='Dizzykong/gpt2-medium-commands', tokenizer='Dizzykong/gpt2-medium-commands')
 
     # Functions for step 1: extracting and processing information from kg
-
-    def verbalize_tuple(self, tuple_in):
-        string = tuple_in[0].get_name() + " " + tuple_in[1] + " " + tuple_in[2].get_name()
-        return string 
 
 
     def verbalize_tuple_2(self, tuple_in):
@@ -144,12 +149,12 @@ class QuestEngine:
         cosine_scores = []
         X = user_string.lower()
 
-        print("User string: ", X)
+        #print("User string: ", X)
 
         for fact in facts_list:
             Y = fact.lower()
 
-            print("Compared with: ", Y)
+            #print("Compared with: ", Y)
             X_list = word_tokenize(X)
             Y_list = word_tokenize(Y)
 
@@ -181,10 +186,15 @@ class QuestEngine:
 
             cosine_scores.append(cosine)
 
-        print(cosine_scores)
-        print("Best match: ", facts_list[cosine_scores.index(max(cosine_scores))])
+        #print("Best match: ", facts_list[cosine_scores.index(max(cosine_scores))])
 
-        return facts_list[cosine_scores.index(max(cosine_scores))], cosine_scores.index(max(cosine_scores))
+        if max(cosine_scores) == 0:
+            rand_idx = random.randrange(len(cosine_scores))
+
+            return facts_list[rand_idx], rand_idx, cosine_scores
+
+
+        return facts_list[cosine_scores.index(max(cosine_scores))], cosine_scores.index(max(cosine_scores)), cosine_scores
 
 
     ### Functions for step 3
@@ -223,9 +233,11 @@ class QuestEngine:
                 if match_tuple[2].get_properties()['name'] == node.get_properties()['name']:
                     possible_tuples.append(tup)
 
+        '''
         print("\nAll possible matches")
         for tup in possible_tuples:
             print(self.verbalize_tuple_2(tup))
+        '''
 
         return possible_tuples
     
@@ -259,14 +271,14 @@ class QuestEngine:
             command_vals.append(quest_target.get_properties()['name'])
 
             loc_str = ""
-            protect_str_str = ""
+            protect_str = ""
+            object_str = ""
 
-            # TODO: Simplify and make code more efficient
             for tup in additional_tuples:
-                print(self.verbalize_tuple_2(tup))
-                if tup[1] ==  'located in':
+                #print(self.verbalize_tuple_2(tup))
+                if tup[2].get_name() ==  'Location':
                     loc_str = 'located in ' + tup[2].get_properties()['name']
-                elif tup[1] == 'protected by':
+                elif tup[2].get_name() == 'Enemy':
                     num = 0
 
                     # Get number of if there is property
@@ -281,13 +293,39 @@ class QuestEngine:
                             protect_str = 'which is protected by ' + str(num) + " " + tup[2].get_properties()['name'] + "s"
                     else:
                         protect_str = 'which is protected by some ' + tup[2].get_properties()['name'] + "s"
+                elif tup[2].get_name() == 'Object':
+                    object_str = "to create " + tup[2].get_properties()['name']
+
 
             command_vals.extend(loc_str.split(' '))
             command_vals.extend(protect_str.split(' '))
+            command_vals.extend(object_str.split(' '))
 
         ## TODO: Implement exploration quests B)
         elif classification == 'exploration':
             start = random.choice(exploration_start_words)
+            command_vals.append(start)
+
+            # Get quest target to get number property
+            quest_target = tuple_nodes[2]
+            command_vals.append(quest_target.get_properties()['name'])
+
+            has_str = ""
+
+            # TODO: Simplify and make code more efficient
+            for tup in additional_tuples:
+                #print(self.verbalize_tuple_2(tup))
+
+                if tup[2].get_name() ==  'Location':       
+                    loc_str = 'located in ' + tup[2].get_properties()['name']
+                elif tup[2].get_name() == 'Object':
+                    has_str = 'and bring back ' + str(tup[2].get_properties()['number_of']) + " " + tup[2].get_properties()['name']
+                elif tup[0].get_name() == 'Object':
+                    has_str = 'and bring back ' +str(tup[0].get_properties()['name']) + " "  + tup[1] + " " + tup[2].get_properties()['name']
+
+            
+            command_vals.extend(loc_str.split(' '))
+            command_vals.extend(has_str.split(' '))
 
         else: # Combat quests 
             # Get start word
@@ -315,93 +353,173 @@ class QuestEngine:
 
             # TODO: Simplify and make code more efficient
             for tup in additional_tuples:
-                print(self.verbalize_tuple_2(tup))
-                if tup[1] ==  'located in':
+                #print(self.verbalize_tuple_2(tup))
+
+                if tup[2].get_name() ==  'Location':       
                     loc_str = 'located in ' + tup[2].get_properties()['name']
-                elif tup[1] == 'has':
+                elif tup[2].get_name() == 'Object':
                     has_str = 'to obtain ' + str(tup[2].get_properties()['number_of']) + " " + tup[2].get_properties()['name']
+                elif tup[0].get_name() == 'Object':
+                    has_str = 'to obtain ' +str(tup[0].get_properties()['name']) + " "  + tup[1] + " " + tup[2].get_properties()['name']
 
             
             command_vals.extend(loc_str.split(' '))
             command_vals.extend(has_str.split(' '))
 
         command_str = " ".join(command_vals)
-        print("Command out: ", command_str)
 
         return command_str
 
 
     # Core functionality. Takes in user input string and returns the final quest.
-    def verbalize_command(self, user_input):
-        print("User said: ", user_input)
+    def verbalize_command(self, user_input, log):
+        #print("User said: ", user_input)
 
         # Step 1: Query database for all information tuples marked for quests
         query_str = "match (n)-[r]->(m) where r.quest = true return n,r,m"
         res = self.dao.query(query_str)
 
-        print(res)
-
         # Get turn neo4j result into fact tuples in a list
         facts = self.extract_facts(res)
 
-        print("Facts found: ", facts)
-
         fact_strings = self.facts_to_strings(facts)
-        print("Facts to strings: ", fact_strings)
+        #print("Facts to strings: ", fact_strings)
 
 
         # Step 2: Get best match from similarity metric of best tuple to build command around
         # TODO: Maybe use multiple metrics to choose the best match?
 
-        best_match, index = self.cosine_similarity(user_input, fact_strings)
-        print("Best matching tuple: ", best_match)
-        print("Index in list: ", facts[index])
+        best_match, index, cosine = self.cosine_similarity(user_input, fact_strings)
+        #print("Best matching tuple: ", best_match)
 
         # Step 3: Turn tuples into command
         additional_information = self.find_connections(facts[index])
-        print("Additional Tuples: ", additional_information)
+        #print("Additional Tuples: ", additional_information)
 
         #Step 3a: Get quest classification
         quest_type = self.get_quest_type(user_input)
-        print("Quest classified as: ", quest_type)
+        #print("Quest classified as: ", quest_type)
 
         # Get command string
         command = self.create_command(facts[index], additional_information, quest_type)
 
-        print("Final command: ", command)
+        #print("Final command: ", command)
+
+        if log is not None:
+            nl = '\n'
+            log.write(f"{nl}User said: {user_input}")
+            log.write(f"{nl}Fact strings: {fact_strings}")
+            log.write(f"{nl}Cosine Similarity Scores: {cosine}")
+            log.write(f"{nl}Best matching tuples: {best_match}")
+            log.write(f"{nl}Additional Tuples: {additional_information}")
+            log.write(f"{nl}Quest classified as: {quest_type}")
+            log.write(f"{nl}Final command out: {command}")
+
 
         return command # Command to return out
 
-    def receive_input(self):
-        print("Welcome to DRAGNTown Quest Generation Test\n")
+    def receive_input(self, logging=True):
 
-        while True:
-            user_in = input("Type something to get a quest for you!\n")
+        if logging: 
+            ## Get inputs for logging file
+            file_name = ''
+
+            mod_name = input("Test Moderator, please type your name: ")
+            user_name = input("Type the name of the participant: ")
+
+            date = datetime.now()
+            curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
+
+            file_name = 'response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
+
+            log = open(file_name, "w")
+            log.write("")
+        else:
+            log = None
+
+        print("\nWelcome to DRAGNTown Quest Generation Test\n")
+        num_quest = int(input("How many prompts will be done: "))
+
+        complete_quests = 0
+
+        while complete_quests < num_quest:
+            user_in = input("\nType something to get a quest for you!\n")
             
-            # Handle quit ooption
+            # Handle quit option
             if user_in == "--quit" or user_in == "quit" or user_in == "q":
                 self.dao.close()
                 sys.exit("Closing server test. Thank you!")
             else: # Process input like normal 
+                nl = '\n'
+                print(f"{nl}Sample Quest #{complete_quests+1}")
 
-                ## TODO: Needs error processing for bad inputs. What is bad input?
+                if logging:
+                    log.write(f"Sample Quest #{complete_quests+1}")
+
+                quests = []
 
                 ## Get quest command from KG
-                quest_command = self.verbalize_command(user_in)
+                quest_command = self.verbalize_command(user_in, log)
 
                 # Generate quest output for user using language model
                 prompt = quest_command + "<div>"
                 sequences = self.generator(prompt, max_length=200, num_return_sequences=1)
                 final_quest = sequences[0]['generated_text'].split("<eos>")[0]
 
-
-
-                
-
                 ## Return final quest to user
-                print("FINAL QUEST: ", final_quest)
+                #print("FINAL QUEST: ", final_quest)
 
-## TODO: Have the user select which NPC to talk to.
+
+                # Present both options to the user in a randomized order
+                quests.append(final_quest)
+
+                placeholder_quest = "I am not having a good day."
+                quests.append(placeholder_quest)
+
+                idx_list = [quests.index(q) for q in quests]
+
+                random.shuffle(idx_list)
+
+                for i, index in enumerate(idx_list):
+                    out_string = f"{nl}Option {i}: {quests[index]}"
+                    print(out_string)
+
+
+                    if logging: 
+                        log.write(f"{nl}{out_string}")
+                        log.write(f"{nl}Generation method: {index} (0 = DRAGN-Town, 1 = N-Gram){nl}")
+
+                user_selected = input("\nWhich quest is better to you? ")
+
+                if logging:
+                    log.write(f'User selected option #{user_selected}')
+                    log.write("\n")
+                
+                complete_quests += 1
+
+            
+
+        print("\n\nThank you for participating in this survey!!")
+
+        # Close dao and file
+        self.dao.close()
+        log.close()
+
+        sys.exit()
+
+## TODO: NPC selection? (SCOPED OUT FOR NOW)
 if __name__ == "__main__":
+    logging.set_verbosity_error()
     console = QuestEngine()
-    console.receive_input()
+    console.receive_input() # Toggle logging on and off.
+
+
+
+
+## TODO List
+#
+# 4. clean up templates, expand on them. IF THERES TIME: randomly select location node - put into an array of location strings, randomly choose one?
+# 5. Add Trevor's code.
+# 6. Add more examples to the 0-shot classification to improve performance.
+#
+#
