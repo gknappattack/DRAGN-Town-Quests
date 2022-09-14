@@ -1,4 +1,5 @@
 from neo4j_interface.Neo4jDAO import Neo4jDAO
+from ngram import NgramModel
 
 import json
 import requests
@@ -58,6 +59,18 @@ nlp.add_pipe("text_categorizer",
         "model": "spacy"
     }
 )
+
+
+def create_ngram_model(n, path):
+    m = NgramModel(n)
+    with open(path, 'r') as f:
+        text = f.read()
+        text = text.split('.')
+        for sentence in text:
+            # add back the fullstop
+            sentence += '.'
+            m.update(sentence)
+    return m
 
 # Class for storing nodes with properties and information with them.
 class Neo_Node:
@@ -442,6 +455,12 @@ class QuestEngine:
 
         complete_quests = 0
 
+
+        # initialize n-gram model
+        m = create_ngram_model(4, 'DRAGN-Town-Quests/wow_v2_cleaned.tsv')
+        random.seed(3)
+
+
         while complete_quests < num_quest:
             user_in = input("\nType something to get a quest for you!\n")
             
@@ -467,15 +486,13 @@ class QuestEngine:
                 final_quest = sequences[0]['generated_text'].split("<eos>")[0]
 
                 ## Return final quest to user
-                #print("FINAL QUEST: ", final_quest)
-
-
-                # Present both options to the user in a randomized order
                 quests.append(final_quest)
 
-                placeholder_quest = "I am not having a good day."
-                quests.append(placeholder_quest)
+                # Generate and save n-gram quest
+                n_gram_quest = m.generate_text(60)
+                quests.append(n_gram_quest)
 
+                # Present both options to the user in a randomized order
                 idx_list = [quests.index(q) for q in quests]
 
                 random.shuffle(idx_list)
@@ -497,7 +514,7 @@ class QuestEngine:
                 
                 complete_quests += 1
 
-            
+
 
         print("\n\nThank you for participating in this survey!!")
 
@@ -507,9 +524,13 @@ class QuestEngine:
 
         sys.exit()
 
+
+
+
 ## TODO: NPC selection? (SCOPED OUT FOR NOW)
 if __name__ == "__main__":
     logging.set_verbosity_error()
+
     console = QuestEngine()
     console.receive_input() # Toggle logging on and off.
 
@@ -519,7 +540,6 @@ if __name__ == "__main__":
 ## TODO List
 #
 # 4. clean up templates, expand on them. IF THERES TIME: randomly select location node - put into an array of location strings, randomly choose one?
-# 5. Add Trevor's code.
 # 6. Add more examples to the 0-shot classification to improve performance.
 #
 #
