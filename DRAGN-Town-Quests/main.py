@@ -498,7 +498,7 @@ class QuestEngine:
                 split_final_quest = final_quest.split('<div>')
 
                 final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
-
+                final_quest = re.sub('George', 'Player', final_quest)
                 ## Return final quest to user
                 quests.append(final_quest)
 
@@ -539,8 +539,8 @@ class QuestEngine:
                         ngram_dialogue += n_gram_quest[idx]
 
                 n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
-                ##### NEED TO MODIFY THIS
 
+                n_gram_quest2 = re.sub('George', 'Player', n_gram_quest2)
 
                 quests.append(n_gram_quest2)
 
