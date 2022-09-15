@@ -448,7 +448,7 @@ class QuestEngine:
             date = datetime.now()
             curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
 
-            file_name = 'response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
+            file_name = 'DRAGN-Town-Quests/response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
 
             log = open(file_name, "w")
             log.write("")
@@ -574,14 +574,38 @@ class QuestEngine:
 
                     if logging: 
                         log.write(f"{nl}{out_string}")
-                        log.write(f"{nl}Generation method: {index} (0 = DRAGN-Town, 1 = N-Gram){nl}")
+                        log.write(f"{nl}Generation method: {index} (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW){nl}")
 
-                user_selected = input("\nWhich quest is better to you? ")
+                user_selected = input("\nWhich quest is most satisfying to you? ")
+                
+
+                if logging:
+                    log.write("\nWhich quest is most satisfying to you?\n")
+                    log.write(f'User selected option #{user_selected}')
+                    log.write("\n")
+
+                
+                user_selected = input("\nWhich quest was most responsive to your input? ")
+                
+
+                if logging:
+                    log.write("\nWhich quest was most responsive to your input?\n")
+                    log.write(f'User selected option #{user_selected}')
+                    log.write("\n")
+
+                
+                user_thoughts = input("\nWhat was your experience with each quest? What did you like/dislike about each one? Please respond in a short paragraph.\n")
+
+                if logging:
+                    log.write("\nWhat was your experience with each quest?\n")
+                    log.write(f'User responded: {user_thoughts}')
+                    log.write("\n")
+
+
                 print("============================")
 
                 if logging:
-                    log.write(f'User selected option #{user_selected}')
-                    log.write("\n")
+                    log.write("\n===========================\n")
                 
                 complete_quests += 1
 
@@ -591,7 +615,9 @@ class QuestEngine:
 
         # Close dao and file
         self.dao.close()
-        log.close()
+
+        if log is not None:
+            log.close()
 
         sys.exit()
 
@@ -603,7 +629,7 @@ if __name__ == "__main__":
     logging.set_verbosity_error()
 
     console = QuestEngine()
-    console.receive_input(False) # Toggle logging on and off.
+    console.receive_input(True) # Toggle logging on and off.
 
 
 
