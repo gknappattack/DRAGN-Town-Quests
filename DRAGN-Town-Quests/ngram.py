@@ -111,7 +111,7 @@ class NgramModel(object):
             context_queue[-1] = input_token[0]
           else:
             context_queue = input_token[-(n-1):]
-        print('cq: ', context_queue)
+        #print('cq: ', context_queue)
         for _ in range(token_count):
             obj = self.random_token(tuple(context_queue))
             result.append(obj)

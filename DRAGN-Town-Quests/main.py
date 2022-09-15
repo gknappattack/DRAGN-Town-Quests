@@ -1,3 +1,8 @@
+# ONLY NEEDED ON SETUP 
+#import nltk
+#nltk.download('stopwords')
+#nltk.download('punkt')
+
 from neo4j_interface.Neo4jDAO import Neo4jDAO
 from ngram import NgramModel
 
@@ -274,7 +279,7 @@ class QuestEngine:
             if 'number_of' in target_props:
                 number_of = target_props['number_of']
 
-                number_of = random.randint(1, number_of // 3)
+                #number_of = random.randint(1, number_of // 3) ####### WAS BREAKING THINGS
 
             # Append number to string
             if number_of is not None and number_of > 1:
@@ -485,12 +490,77 @@ class QuestEngine:
                 sequences = self.generator(prompt, max_length=200, num_return_sequences=1)
                 final_quest = sequences[0]['generated_text'].split("<eos>")[0]
 
+                import re
+                final_quest = re.sub('([.,!?()])', r' \1 ', final_quest)
+                final_quest = re.sub('\s{2,}', ' ', final_quest)
+                #print(s)
+
+                split_final_quest = final_quest.split('<div>')
+
+                final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
+
                 ## Return final quest to user
                 quests.append(final_quest)
 
                 # Generate and save n-gram quest
-                n_gram_quest = m.generate_text(60)
-                quests.append(n_gram_quest)
+                # Grab a random quest prompt for n-gram model
+                ngram_prompt_options = ["explore", "gather", "attack", "defend", "search", "destroy", "mine", "hunt", "help", "craft", "create", "build"]
+                input_trigger = False
+                trigger_word = None
+                for word in user_in.split(' '):
+                    if word.lower() in ngram_prompt_options:
+                        input_trigger = True
+                        trigger_word = word
+                if input_trigger == True:
+                    ngram_input = trigger_word
+                else:
+                    ngram_input = ngram_prompt_options[random.randint(0,len(ngram_prompt_options)-1)]
+                n_gram_quest = m.generate_text(60, ngram_input[0].upper() + ngram_input[1:])
+                
+                ngram_quest = ""
+                ngram_title = ""
+                ngram_dialogue = ""
+                ngram_parser_mode = 0
+                for idx in range(len(n_gram_quest)):
+                    # append to quest
+                    if ngram_parser_mode == 0:
+                        ngram_quest += n_gram_quest[idx]
+                        if n_gram_quest[idx] == ".":
+                            ngram_parser_mode += 1
+                            ngram_quest += '.'
+                    # append to title
+                    elif ngram_parser_mode == 1:
+                        ngram_title += n_gram_quest[idx]
+                        if n_gram_quest[idx] == "." and len(ngram_title) > 4:
+                            ngram_parser_mode += 1
+                            #ngram_title += '.'
+                    # append to dialogue
+                    else:
+                        ngram_dialogue += n_gram_quest[idx]
+
+                n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
+                ##### NEED TO MODIFY THIS
+
+
+                quests.append(n_gram_quest2)
+
+
+                # CHOOSE A RANDOM WOW QUEST
+                wow_lines = open('DRAGN-Town-Quests/wow_v2_cleaned.tsv', 'r').readlines()
+                rand_quest_idx = random.randint(0, len(wow_lines)-1)
+                wow_quest = wow_lines[rand_quest_idx].split('\t')
+                wow_quest[0]= re.sub('([.,!?()])', r' \1 ', wow_quest[0])
+                wow_quest[0] = re.sub('\s{2,}', ' ', wow_quest[0])
+                wow_quest[1]= re.sub('([.,!?()])', r' \1 ', wow_quest[1])
+                wow_quest[1] = re.sub('\s{2,}', ' ', wow_quest[1])
+                wow_quest[2]= re.sub('([.,!?()])', r' \1 ', wow_quest[2])
+                wow_quest[2] = re.sub('\s{2,}', ' ', wow_quest[2])
+
+                wow_quest_final = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
+                
+
+
+                quests.append(wow_quest_final)
 
                 # Present both options to the user in a randomized order
                 idx_list = [quests.index(q) for q in quests]
@@ -507,6 +577,7 @@ class QuestEngine:
                         log.write(f"{nl}Generation method: {index} (0 = DRAGN-Town, 1 = N-Gram){nl}")
 
                 user_selected = input("\nWhich quest is better to you? ")
+                print("============================")
 
                 if logging:
                     log.write(f'User selected option #{user_selected}')
@@ -532,7 +603,7 @@ if __name__ == "__main__":
     logging.set_verbosity_error()
 
     console = QuestEngine()
-    console.receive_input() # Toggle logging on and off.
+    console.receive_input(False) # Toggle logging on and off.
 
 
 
