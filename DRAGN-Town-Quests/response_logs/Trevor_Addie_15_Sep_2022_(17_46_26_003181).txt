@@ -1,0 +1,196 @@
+Sample Quest #1
+User said: Where is your leader ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x1478ae040>, 'likes to have', <__main__.Neo_Node object at 0x14733c220>), (<__main__.Neo_Node object at 0x147348d30>, 'stolen by', <__main__.Neo_Node object at 0x147348e50>)]
+Quest classified as: combat
+Final command out: Fight 40 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Explore around the titan statue inside and report back to Darkrider Arly at Blackwatch wants you to meet him at Krasus ' Landing ..
+	Title:  Somehow , after a mere 2 days of isolation , they ' ll tuck tail and run for the protection of her ladyship .
+	Dialogue:  Beastmaster ' s Hunt : The Crab Along with the snare , you .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Enter a Lightforged Battery and slay 30 Frenzied Plaguewings . 
+	Title: Fire At Will
+	Dialogue: Look out there , the wings of the bats fill the sky . We must offer what ranged support we can , but our hands are full here . It looks like the Legion has not yet destroyed all of the artillery batteries . If you can get to one , you should be able to show those flying fiends the Light . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Fight 40 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: Return to The Great Dragon
+	Dialogue: Well , you know all of that is real , but I can tell it's not always so easy . But I'll just have you read the pamphlet over there , and then you should be able to tell me about this stuff . Go on , prove yourself , and then maybe they'll let you in on the secret . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 1 had a lot of detail and had me imagining it in my mind. Option 2 said it would let me in on the secret (my question) once I completed something
+
+===========================
+Sample Quest #2
+User said: I want to fight the dragon .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.20412414523193154]
+Best matching tuples: Trevor wants killed The Great Dragon of Arelind
+Additional Tuples: [(<__main__.Neo_Node object at 0x144fa1340>, 'wants killed', <__main__.Neo_Node object at 0x144fa1460>), (<__main__.Neo_Node object at 0x144fa1400>, 'lives by', <__main__.Neo_Node object at 0x144fa1520>), (<__main__.Neo_Node object at 0x144fa14c0>, 'lives in', <__main__.Neo_Node object at 0x144fa15e0>), (<__main__.Neo_Node object at 0x144fa1640>, 'comes from', <__main__.Neo_Node object at 0x144fa1760>), (<__main__.Neo_Node object at 0x144fa1700>, 'stolen by', <__main__.Neo_Node object at 0x144fa1820>)]
+Quest classified as: exploration
+Final command out:  Explore The Great Dragon of Arelind located in Arelind and bring back Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest:  Explore The Great Dragon of Arelind located in Arelind and bring back Gold stolen by The Great Dragon of Arelind
+	Title: The Gift of The Great Dragon
+	Dialogue: Your arrival here has provided great relief . The Great Dragon is now occupied on the hunt for his brother . We know now that he's slain a great beast , the Sunreaver , which he had a grudge against . He's been sent on a task by The Great Dragon to slay another of his offspring . Should he succeed , our brother's body should be safe . But first , the dragon must be saved . Go to his tower and retrieve whatever you can . The Great Dragon awaits . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Hunt down these vile casters and bring me its organs ! Escort Drijya to the warp - masters and warp - engineers ..
+	Title:  In any case , Archivist Dreyden would probably be pleased to have his book back .
+	Dialogue:  Speak to Soulbinder Nyami at the Seat of the Primus rings true . . It is regrettable , what I need , .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Slay 6 Bound Seasurges . 
+	Title: Freedom for the Sea
+	Dialogue: The naga along this coast appear to be trying to push the shoreline up the hill here . We've been able to keep them back at the beach so far , but they've been binding more elementals than we can keep up with . Without a tidesage , we have no way to free the elementals from their bindings , but we cannot allow them to push forward anymore . The spirit of the sea should not be contained by anything . Slay them , and let them return to the ocean . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 2 had a lot of detail and was fun to read. Option 0 directly answered my desire of wanting to fight the dragon. 
+
+===========================
+Sample Quest #3
+User said: Where can I get a new shield ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor hungry for Meat
+Additional Tuples: [(<__main__.Neo_Node object at 0x144fa9250>, 'hungry for', <__main__.Neo_Node object at 0x144fa97f0>), (<__main__.Neo_Node object at 0x144fab8e0>, 'comes from', <__main__.Neo_Node object at 0x144fab280>), (<__main__.Neo_Node object at 0x144fab220>, 'comes from', <__main__.Neo_Node object at 0x144fab370>)]
+Quest classified as: gathering
+Final command out: Retrieve 10 Meat  which is protected by a The Great Dragon of Arelind to create Meat
+
+Option 0: 
+	Quest: Help Akuno find his way to the final finger and lay waste to all the other survivors ! Speak to Overlord Krom ' gar General ' s insignia back to High Chieftain Cliffwalker at Cliffwalker Post in Stonetalon Mountains ..
+	Title:  Then I ' ll move on ahead and greet our new companion .
+	Dialogue:  Find Vindicator Nobundo at the Throne of the .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Bring the Incriminating Documents to Aeldon Sunbrand at Falconwing Square in Eversong Woods . 
+	Title: Incriminating Documents
+	Dialogue: The documents contain detailed maps of different strategic buildings in Eversong Woods . A diagram of an arcane sanctum is also sketched in good detail . There seem to be numerous notes in a language you don't recognize . As these were carried by a Darnassian spy , it might be a good idea to bring them to the Captain of the Guard - Aeldon Sunbrand . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Retrieve 10 Meat which is protected by a The Great Dragon of Arelind to create Meat
+	Title: Mosaic Meat
+	Dialogue: To feed the clan , we must have a reliable source of good meat . The mantid keep several beasts at their disposal that would offer the best option we have at the moment . They make great meat , but we cannot just let the mantid eat whatever we have . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Option 1 was detailed and interesting. It also seemed to point me in the best direction of my question. 
+
+===========================
+Sample Quest #4
+User said: Where can i find the princess ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor needs built House
+Additional Tuples: [(<__main__.Neo_Node object at 0x141215190>, 'needs built', <__main__.Neo_Node object at 0x140ce23a0>), (<__main__.Neo_Node object at 0x140ceef10>, 'built in', <__main__.Neo_Node object at 0x140cf5070>), (<__main__.Neo_Node object at 0x140ceefd0>, 'made from', <__main__.Neo_Node object at 0x140cf5130>), (<__main__.Neo_Node object at 0x140cf50d0>, 'made from', <__main__.Neo_Node object at 0x140cf51f0>), (<__main__.Neo_Node object at 0x140cf5190>, 'made from', <__main__.Neo_Node object at 0x140cf52b0>)]
+Quest classified as: gathering
+Final command out: Gather House located in Sandy Beach  to create Bricks
+
+Option 0: 
+	Quest: Kill Chief Engineer Grizz . 
+	Title: Grizzled
+	Dialogue: I saw a particularly ugly and quite agitated goblin barking orders at the rest of the miners . I'm willing to bet he's crucial to their entire operation . If you can get into the mine and eliminate him , hopefully it will throw things into disarray . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Craft the Herald ' s Footpads to Dactylis ..
+	Title:  If the Scryers get definite proof of this , but I know he ' ll be happy to share some of his recruits to protect us from the Curse .
+	Dialogue:  Sign Your Own Death Warrant Ember Ward only for bad buds ! < Stonehead squints at you and shakes head . I .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Gather House located in Sandy Beach to create Bricks
+	Title: I , Farmer , Am Needed: New Bricks
+	Dialogue: <The farmhands move a cartload of wood . >They're gonna need more ! If you make any wood turnips in my stead , I'll give you 20 bucks . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: This one was a bit humorous and sounded like a real mission. It at least pointed me in the right direction to my question 
+
+===========================
+Sample Quest #5
+User said: Who can help me ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor requires Deer Hides
+Additional Tuples: [(<__main__.Neo_Node object at 0x140ce2400>, 'requires', <__main__.Neo_Node object at 0x140cfb2b0>), (<__main__.Neo_Node object at 0x13a3b5520>, 'found in', <__main__.Neo_Node object at 0x140cfbbb0>)]
+Quest classified as: gathering
+Final command out: Bring back 5 Deer Hides located in The Dark Forest  to create Deer Hides
+
+Option 0: 
+	Quest: Obtain 10 samples of Plaguehound Blood . 
+	Title: A Gift For Fiona
+	Dialogue: My traveling companion , Fiona , runs a small vendor's shop out of her caravan . She and I , along with our friend Gidwin , are all on our way to Light's Hope Chapel . I'm sure you can join us , if you like . . . though Fiona might be a little mad at me . Fiona always forgets why she's mad if you give her a gift . Kill some of the plaguehounds north of here , then bring their blood to Fiona at the caravan , down by the river . She'll love it . We'll talk again there . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Bring back 5 Deer Hides located in The Dark Forest to create Deer Hides
+	Title: Deer Hides
+	Dialogue: The druids of Orgrimmar have created quite a variety of hides . The druids have given me permission to keep some of them for use in my experiments , but there is a catch . Those animals could easily succumb to their unnatural anima ! Deelhides are of little use and can be obtained in the woods . You'll find many near bog lords , though . The trick is putting them in a good state of defilement , and then putting just enough pressure on the feathers to break loose . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Help me obtain the following parts ..
+	Title:  Nephew Bentnail will show you what I ' ve ever seen and has even fought in the Highmaul Coliseum ! I ' m not sure what to do .
+	Dialogue:  It ' s far to the southeast . All of my troops hate sharks too . You ' d have never found it . Gnomus .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 1 gives great detail and uses vocabulary that sounds like a real video game quest. Option 0 talks about a companion, a person that could help me like my question asked
+
+===========================
+

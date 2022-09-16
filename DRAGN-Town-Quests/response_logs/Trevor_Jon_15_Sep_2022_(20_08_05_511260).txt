@@ -1,0 +1,195 @@
+Sample Quest #1
+User said: I am the hero thou dost seek . Give me mine glory !
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor wants hunted Deer
+Additional Tuples: [(<__main__.Neo_Node object at 0x1465e6760>, 'wants hunted', <__main__.Neo_Node object at 0x1465e6a00>), (<__main__.Neo_Node object at 0x1465e6d60>, 'comes from', <__main__.Neo_Node object at 0x1465e6e80>)]
+Quest classified as: combat
+Final command out: Slay 7 Deer  to obtain Meat comes from Deer
+
+Option 0: 
+	Quest: Mine has never felt heavier than it does at this very moment ..
+	Title:  . Quasi - Facet scan creatures in Mechagon Toys Like Us I must share the wonders of this place , two days past .
+	Dialogue:  As soon as my work here is done , and I doubt you ' ve completed the task . Power Protocol Initiation We ' .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: 
+	Title: FLAG - Abandoned Crate of Goods
+	Dialogue:  
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Slay 7 Deer to obtain Meat comes from Deer
+	Title: Not On Our Watch . . . 
+	Dialogue: These deer have nowhere to go , Player . They have become quite territorial and don't leave the mountains . They won't feed unless they have some meat from the nearby lakes . When you kill a deer , you are guaranteed to find meat from the nearby lakes . Bring me enough meat ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 0 was hard to understand, didn't understand the quest. Option 2, who doesn't like killing stuff?
+
+===========================
+Sample Quest #2
+User said: How can I help ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor hungry for Meat
+Additional Tuples: [(<__main__.Neo_Node object at 0x13c71aa90>, 'hungry for', <__main__.Neo_Node object at 0x13c71abb0>), (<__main__.Neo_Node object at 0x13c71ae50>, 'comes from', <__main__.Neo_Node object at 0x13c71af70>), (<__main__.Neo_Node object at 0x13c71af10>, 'comes from', <__main__.Neo_Node object at 0x13c721070>)]
+Quest classified as: gathering
+Final command out: Gather 10 Meat  which is protected by a The Great Dragon of Arelind to create Meat
+
+Option 0: 
+	Quest: Gather 10 Meat which is protected by a The Great Dragon of Arelind to create Meat
+	Title: The Great Bird of Arelind
+	Dialogue: <The seal around the beast is cracked . The large feathers on its neck are broken . The feathers are missing . The seal could not have come off the beast safely . Even if a beast of meat were in this part of the world , you should be able to find at least some meat leftover . Perhaps you can recover some for us when you are done ? >
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Captain Adams has ordered you to get 5 bomb hits on the Plague Tanks at New Agamand . Do not return to him at Westguard Keep until you have accomplished that . 
+	Title: Mission: Plague This ! 
+	Dialogue: The Royal Apothecary Society thinks they're going to perfect a new plague to melt us down where we stand ? ! Not on my watch ! Get out to the courtyard and speak with Greer Orehammer . He's got a gryphon and some bombs ready for you . I want you to bomb the plague tanks at New Agamand to smithereens ! 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Help us free the other souls , and we must put an end to Andaris ..
+	Title:  De tool you will use this booterang to sow terror into the hearts of their kin with fear and doubt .
+	Dialogue:  No Sister Left Behind We were searching the ruins south and west of the tournament grounds at the training area east of the valley .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Option 2 was satisfying because it was interesting what i'd have to do. Option 1 was responsive because it sounded closest to what I asked. It was in line with what I was looking for.
+
+===========================
+Sample Quest #3
+User said: Are there any quests worthy enough for this lord ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor hungry for Meat
+Additional Tuples: [(<__main__.Neo_Node object at 0x13c728fd0>, 'hungry for', <__main__.Neo_Node object at 0x13c7288b0>), (<__main__.Neo_Node object at 0x13c728b50>, 'comes from', <__main__.Neo_Node object at 0x13c728c70>), (<__main__.Neo_Node object at 0x13c728880>, 'comes from', <__main__.Neo_Node object at 0x13c728dc0>)]
+Quest classified as: combat
+Final command out: Eliminate 4 Meat  to obtain Meat comes from The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Attack a Druid of the Flame ..
+	Title:  It might still , without treatment .
+	Dialogue:  . Throw Filthy Rubble into the muck pool . What do you say ? Check on the Heathrow house , Granny Marl ' s farm is in big trouble . You are looking for Overseer Durant . Elder Shai Hu drank the sha - corrupted waters of .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Defeat the Darkwing Roc while riding your Talbuk-In-Training . 
+	Title: Talbuk Training: Darkwing Roc
+	Dialogue: The windrocs of Nagrand are a smart predator , often swooping down on unwary prey in packs . If your beast doesn't keep an eye on the sky , it's likely to lose both of 'em . Head on out to Nagrand and take on the fiercest windroc of the bunch , the Darkwing Roc . That'll be a good test for the both of ye . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Eliminate 4 Meat to obtain Meat comes from The Great Dragon of Arelind
+	Title: Unforgiven
+	Dialogue: I know you're here doing the best you can to win over the gronn , but there is one thing you must do . I'm too young to be a huntmaster , but I'm still trained in combat . One night last week , I was tasked with taking out one of the orc leaders , Agraforn . All I had to do was kill him in combat . Instead , I received an orc bounty . When I noticed it , my guard system went off and I forgot to collect my payment . Now , these orcs will treat me as dirt for all eternity . When you are ready , get a weapon from Agraforn and I shall reward you handsomely . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 2 was the most personal despite the funny quest because the dialogue made it feel more personal. It wasn't just a task, but it was an adventure to avenge the person. There is more purpose.
+
+===========================
+Sample Quest #4
+User said: My wife has left me and I want to die .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor wants hunted Deer
+Additional Tuples: [(<__main__.Neo_Node object at 0x13b8d9700>, 'wants hunted', <__main__.Neo_Node object at 0x13b8d99a0>), (<__main__.Neo_Node object at 0x13b8d9d00>, 'comes from', <__main__.Neo_Node object at 0x13b8d9e20>)]
+Quest classified as: combat
+Final command out: Fight 10 Deer  to obtain Meat comes from Deer
+
+Option 0: 
+	Quest: Defend Ardenweald by completing Side Quests , Bonus Objectives , World Quests , Daily Quests , looting treasures , and return to her at Sentinel Hill in Westfall ..
+	Title:  However , Azoran is no mere demon .
+	Dialogue:  We ' ll let the others know that we have so few here , and gather the mossy tumors growing upon them . Collect .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Seek out Sky-Reaver Korm Blackscar aboard Orgrim's Hammer flying above Icecrown . 
+	Title: Orgrim's Hammer
+	Dialogue: The Argent Crusade pulled my ravaged body from the Broken Front . What a glorious battle , Human . My axe sang as it cut down Alliance filth and Scourge alike . My time is over . It will be a good death . Carry a message for me , soldier . Our base flies out of reach of Scourge - overhead between Mord'rethar and Aldur'thar . It is called ""Orgrim's Hammer . ""<Hork futilely attempts to salute . >Fly high and avoid the Alliance juggernaut , Skybreaker . Tell Korm . . . tell him I died . . . fighting . . . For the Horde . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Fight 10 Deer to obtain Meat comes from Deer
+	Title: Hiding the Claw
+	Dialogue: Our food supply is largely in meat . Luckily I discovered a way to take it out of the ground . It only seems to have taken a few hundred lifespans , but in my opinion , it is time to find the middle way . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 1 was good because it gave a purpose to take my mind off of my suicidal ideation. Option 0 because this had more to do with what my problem was.
+
+===========================
+Sample Quest #5
+User said: I want to hunt some Dragons .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor does not have Iron
+Additional Tuples: [(<__main__.Neo_Node object at 0x1459f4220>, 'does not have', <__main__.Neo_Node object at 0x1459f4e50>), (<__main__.Neo_Node object at 0x145a04250>, 'mined at', <__main__.Neo_Node object at 0x145a04370>), (<__main__.Neo_Node object at 0x145a04310>, 'to create', <__main__.Neo_Node object at 0x145a04430>), (<__main__.Neo_Node object at 0x145a043d0>, 'to create', <__main__.Neo_Node object at 0x145a044f0>)]
+Quest classified as: exploration
+Final command out:  Explore Iron located in Big Boulder Quarry and bring back 1 Armor
+
+Option 0: 
+	Quest:  Explore Iron located in Big Boulder Quarry and bring back 1 Armor
+	Title: More Armor
+	Dialogue: I have a feeling this item is going to go a long way to protect you in your battle with Neltharaku . The ore here has a high degree of resistance to some , but a good-quality piece of metal should be able to resist attacks from many monsters . That should be exactly what we need ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Hunt them and find a way of letting James Hyal ' s wife , Tatjana , from before the time of my preservation ..
+	Title:  . The Nightmare Lord You arrived just in time , friend ? Are you willing to stand against any threat , even if you must - I cannot understand much of what they say : An army
+	Dialogue:  .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Collect 3 Vestiges of Light . 
+	Title: Essence of the Light Mother
+	Dialogue: This is a crucial moment , George . Our campaign must not lose momentum . Though she has fallen , I still sense Xe'ra's presence all around us . The Light that shone within her heart can yet be a source of strength for our cause . No doubt the loss of Xe'ra has deeply wounded Turalyon . I will do what I can to ease his troubled spirit while you gather the vestiges of the naaru that remain . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 0 because it seemed to apply to hunting dragons which is what I was seeking. For this reason, it seemed that it was responsive as well.
+
+===========================

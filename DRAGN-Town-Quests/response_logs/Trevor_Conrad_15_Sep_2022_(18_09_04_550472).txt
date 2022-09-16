@@ -1,0 +1,195 @@
+Sample Quest #1
+User said: Where do I buy a weapon ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor hungry for Meat
+Additional Tuples: [(<__main__.Neo_Node object at 0x1476729d0>, 'hungry for', <__main__.Neo_Node object at 0x147672af0>), (<__main__.Neo_Node object at 0x147672d90>, 'comes from', <__main__.Neo_Node object at 0x147672eb0>), (<__main__.Neo_Node object at 0x147672e50>, 'comes from', <__main__.Neo_Node object at 0x147672f70>)]
+Quest classified as: gathering
+Final command out: Retrieve 10 Meat  which is protected by a The Great Dragon of Arelind to create Meat
+
+Option 0: 
+	Quest: Gather a formidable force and strike him down ..
+	Title:  As long as you prove that you ' ll have a deal ? Follow Laurent and collect Mirror Fragments .
+	Dialogue:  Let me accompany you into the pit ! Escort Mist to Sentinel Arynia Cloudsbreak at the moon well near the Oracle Tree , far to the southwest and see what comes out .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Retrieve 10 Meat which is protected by a The Great Dragon of Arelind to create Meat
+	Title: That's Good News
+	Dialogue: I've got a plan to cure the giant , you see . We're going to need meat from the dragons that live here , which is the greatest source of meat on Azeroth . That means you're going to need meat from the gronn that live around here . And you're going to need meat from the big one , Dragonblight . A pretty damn dangerous place , too , sometimes . Go kill some of the gronn and use the meat to create meat . When you've got enough , bring those meat chunks back to me for analysis ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Help Thalyssra complete the Scrying Ritual . 
+	Title: On Public Display
+	Dialogue: Now that I have identified Vanthir's essence from the multitude of Suramar's citizens , it may be that I can find his exact location . I believe you'll recall a similar ritual with our friend Theryn . Do not worry- there will be less screaming this time . Hopefully . Come . Let us find our missing tavernkeeper . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 2 sounded the most like a quest I would see in a game. Option 0 seems to be closer to what I was looking for, but none directly helped me answer my question.
+
+===========================
+Sample Quest #2
+User said: Where can I go to become more powerful ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor hungry for Meat
+Additional Tuples: [(<__main__.Neo_Node object at 0x1458cbbb0>, 'hungry for', <__main__.Neo_Node object at 0x1458cbcd0>), (<__main__.Neo_Node object at 0x1458cbf70>, 'comes from', <__main__.Neo_Node object at 0x1458d40d0>), (<__main__.Neo_Node object at 0x1458d4070>, 'comes from', <__main__.Neo_Node object at 0x1458d4190>)]
+Quest classified as: gathering
+Final command out: Collect 10 Meat  which is protected by a The Great Dragon of Arelind to create Meat
+
+Option 0: 
+	Quest: Mine Disposal , the Goblin Way The paratroopers have mined the beach ! The Warchief has asked for help ..
+	Title:  Unfortunately , they continue to eat all of the blueprints you ' ve bought ourselves a little breathing room , but there is one panther which has eluded your grasp .
+	Dialogue:  All they had to use our new allies to our .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Help Glimmercane extract water from the pool in the Untamed Verdure . 
+	Title: A Splash of the Eternal
+	Dialogue: I don't really know much about this place or its inhabitants , but what I do know is magic ! I can sense ancient power from the waters near us . Maybe that can help ? Let's check out that pond ! 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Collect 10 Meat which is protected by a The Great Dragon of Arelind to create Meat
+	Title: To the Slaughter
+	Dialogue: I've been hunting bears here in Zephyrion . I know the plains are sacred to the spirits of the land , but we should not put their deaths at risk . To the northeast , in the Shadowland , lies Terokkar Forest , a place which is still haunted by the ghosts of our ancestors . The spirit hunters there have been fighting tooth and nail to secure this forest but the spirits of their tribe have long since been slain . If you venture into the forest and bring me meat from its fallen beasts , I shall create a meal for the spirits . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Option 2 was very detailed, but it didn't directly answer my question. Option 1 made the most sense with my question. 
+
+===========================
+Sample Quest #3
+User said: I need a way to hide from my enemies .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x1437021f0>, 'likes to have', <__main__.Neo_Node object at 0x1437024f0>), (<__main__.Neo_Node object at 0x143710040>, 'stolen by', <__main__.Neo_Node object at 0x143710160>)]
+Quest classified as: combat
+Final command out: Eliminate 11 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Stop Grand Magister Reglakk's research . 
+	Title: Reglakk's Research
+	Dialogue: Okay so these orders say Reglakk is in charge of something called Breaker research , which makes super powerful ogres . I don't know about you but that sounds bad . I'm pretty hurt , do you think you can go up there alone and make Reglakk rethink his research ? 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Craft the Sapphronetta Flivvers Action Figure at Pascal - K1N6 ' s database in Rustbolt ..
+	Title:  With them out of the area that you find .
+	Dialogue:  Custodian Dieworth at Kirin ' Var Village ' s Wizard Row and return the hat to his Footlocker . Bring Elder Shu 50 Volatile Blooms . Honor and Strength My name is Etaruk , and .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Eliminate 11 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: Foragers of Arelind
+	Dialogue: When I first saw an omen in the forests , I was certain that the great dragon was here to make the last move against the Aysa . With it gone , I could now walk confidently along the coast . However , a young scout has warned against such a course of action . He points out that the location of its lair lies within this forest as well . We need to recover enough of its treasure to make us a mighty fighting army ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 1 and 0 were hard to figure out. None were very responsive, but 2 was the best.
+
+===========================
+Sample Quest #4
+User said: Where can I find an army ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor does not have Iron
+Additional Tuples: [(<__main__.Neo_Node object at 0x1437109a0>, 'does not have', <__main__.Neo_Node object at 0x1437107c0>), (<__main__.Neo_Node object at 0x143702700>, 'mined at', <__main__.Neo_Node object at 0x143702b20>), (<__main__.Neo_Node object at 0x143702580>, 'to create', <__main__.Neo_Node object at 0x143702070>), (<__main__.Neo_Node object at 0x1437024c0>, 'to create', <__main__.Neo_Node object at 0x143702df0>)]
+Quest classified as: exploration
+Final command out: Go see Iron located in Big Boulder Quarry and bring back 1 Armor
+
+Option 0: 
+	Quest: 
+	Title: The Writhing Mire
+	Dialogue:  
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Hunt the bears and wolves that wander nearby have been twisted too far ..
+	Title:  > Recover Addie ' s manuscript from Sated Hillstriders within Pinerock Basin .
+	Dialogue:  Stand under Tooga ' s shell to protect you from the one functioning boot we have left to offer the Moon Guard and us both refuge right under the Legion ' s forces . .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Go see Iron located in Big Boulder Quarry and bring back 1 Armor
+	Title: Armor for the Giants
+	Dialogue: Ironhide , you've done us all a great service , Player . Now return to the quarry , and bring back any pieces of armor you find . We'll use them both against the Horde and Zereth Mortis , and we need your help getting Ironhide started . I'll wait at the entrance to the quarry and wait for you upon your return . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 2 made the most sense with what I asked, it didn't directly answer the question, but could be step 1 to a larger quest.
+
+===========================
+Sample Quest #5
+User said: Where is a safe place to hide my treasure ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor needs built House
+Additional Tuples: [(<__main__.Neo_Node object at 0x143717760>, 'needs built', <__main__.Neo_Node object at 0x1437104f0>), (<__main__.Neo_Node object at 0x14391c580>, 'built in', <__main__.Neo_Node object at 0x14391c250>), (<__main__.Neo_Node object at 0x14391c130>, 'made from', <__main__.Neo_Node object at 0x14391c730>), (<__main__.Neo_Node object at 0x14391c640>, 'made from', <__main__.Neo_Node object at 0x14391c880>), (<__main__.Neo_Node object at 0x14391c790>, 'made from', <__main__.Neo_Node object at 0x14391c820>)]
+Quest classified as: combat
+Final command out: Kill House located in Sandy Beach to obtain 10 Bricks
+
+Option 0: 
+	Quest: Kill House located in Sandy Beach to obtain 10 Bricks
+	Title: What is Dirt in the Marsh
+	Dialogue: You might think that any other dirt you discover at this marsh would be discarded . However , I hear from three recent arrivals here that there is a strange , ancient substance out in the marsh that is now being stockpiled to fuel their fires . It seems to be the most potent dirt that has ever been found in the marsh ! Find it , go to Sandy Beach to get the dirt and bring it back here . It is their treasure ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Help them bring victory to the Frostwolf Clan ! Treasure : Netherstruck Charm Tracking Quest : Treasure Map Valley of Destruction Garrison Follower : Greatmother Geyah Kill 15 Warsong forces at Telaar ..
+	Title:  Remnants of the First Ones with a familiar face that you ' ll run into many ethereals there , but it didn ' t survive the initial onslaught
+	Dialogue:  .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Sergeant Gray has asked you to kill Commander Largo at Largo's Overlook . The overlook is just northeast of the base camp . 
+	Title: Taking the Overlook Back
+	Dialogue: There is only one way for us to take Largo's Overlook back . I think you know what we need to do George . Largo is pretty paranoid these days so you should be able to find him on top of the tower , looking for his imaginary navy to finally arrive . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 0 was kind of funny, creative, and an off the wall quest. It doesn't directly answer the question, but bizzarre enough it could answer the question.
+
+===========================

@@ -463,7 +463,7 @@ class QuestEngine:
 
         # initialize n-gram model
         m = create_ngram_model(4, 'DRAGN-Town-Quests/wow_v2_cleaned.tsv')
-        random.seed(3)
+        random.seed(datetime.now())
 
 
         while complete_quests < num_quest:

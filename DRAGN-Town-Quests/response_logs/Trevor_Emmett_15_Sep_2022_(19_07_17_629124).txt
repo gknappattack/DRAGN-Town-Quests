@@ -1,0 +1,195 @@
+Sample Quest #1
+User said: Have you seen the man that rode by ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor requires Deer Hides
+Additional Tuples: [(<__main__.Neo_Node object at 0x14619d6a0>, 'requires', <__main__.Neo_Node object at 0x1461b1b50>), (<__main__.Neo_Node object at 0x1461ba4f0>, 'found in', <__main__.Neo_Node object at 0x1461ba610>)]
+Quest classified as: combat
+Final command out: Vanquish Deer Hides located in The Dark Forest to obtain 5 Deer Hides
+
+Option 0: 
+	Quest: Help set the stage , then come back here until we ' ve made some solid hookshots and grapple points ..
+	Title:  Cluck , Cluck , Boom The endemic poultrids of Zereth Mortis .
+	Dialogue:  The being you will call down another cursed spirit ! Deliver news of your victory . Return to Hazzik at Blackwind Landing outside Skettis . The Crypt Keeper .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Vanquish Deer Hides located in The Dark Forest to obtain 5 Deer Hides
+	Title: A Gift for Bear Momma
+	Dialogue: We will teach our poachers to respect our precious wildlife and bring them peace by destroying their hides . A good hunt for me usually gives me one deer hide a day . You should go to The Dark Forest to gather some for me . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Travel to the Catalyst Gardens and use the Creation Catalyst . 
+	Title: The Catalyst Awakens
+	Dialogue: Adventurer , can you feel it ? High above the Catalyst Gardens , the Creation Catalyst hums with new power . This power while change the world itself . You must harness it at once . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 2 had the best dialogue. It was the most interesting. Option 0 wasn't very descriptive but matched the best.
+
+===========================
+Sample Quest #2
+User said: We bring word from king zallu that this town is required to pay tax .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor requires Deer Hides
+Additional Tuples: [(<__main__.Neo_Node object at 0x1461ba5b0>, 'requires', <__main__.Neo_Node object at 0x1461c1eb0>), (<__main__.Neo_Node object at 0x14619dee0>, 'found in', <__main__.Neo_Node object at 0x14619d4c0>)]
+Quest classified as: exploration
+Final command out: Go to Deer Hides located in The Dark Forest and bring back 5 Deer Hides
+
+Option 0: 
+	Quest: Go to Deer Hides located in The Dark Forest and bring back 5 Deer Hides
+	Title: Dire Wolf Hides
+	Dialogue: It's a shame the wolf isn't too keen on us , Player . Our scouts have found strange wildlife from the forest surrounding here . Most are deer , but there's one thing of which I'm certain , it's got something to do with me . . . and the dark elves . They've gathered a strange plant that we're supposed to use to ward off evil wolves . Will you do us a little favors and bring back as many of them for my book ? 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Researcher Tiorus at Shadowmoon Village in Shadowmoon Valley wants you to recover 8 Felfire Spleens . 
+	Title: What Strange Creatures . . . 
+	Dialogue: I am interested in learning more about the strange reptiles that mill about the lava flows of Shadowmoon Valley . Never have I seen beasts able to withstand the searing heat of molten lava ! Outside of Shadowmoon Village , where the ground has ruptured and lava flows through the cracks , you will find felfire diemetradons . Slay them and bring me their spleens . From their spleens I will be able to begin preliminary analysis of their resistance to heat . Begin your search to the southeast . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Defend Ardenweald by completing Side Quests , Bonus Objectives , World Quests , and slaying rare creatures ..
+	Title:  Take ' em both with you .
+	Dialogue:  Please don ' t have time for that ! We ' re not going to leave it alive , it ' ll lead Maiev and my Deathsworn to Illidan ' s soul within its new , .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 2 made me more curious. As for responsive, Option 2 seemed to address my statement the best.
+
+===========================
+Sample Quest #3
+User said: Please send help ! My friend has broken his leg !
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor requires Deer Hides
+Additional Tuples: [(<__main__.Neo_Node object at 0x14619d5b0>, 'requires', <__main__.Neo_Node object at 0x1461c1070>), (<__main__.Neo_Node object at 0x1463c1b20>, 'found in', <__main__.Neo_Node object at 0x1463c1c40>)]
+Quest classified as: combat
+Final command out: Vanquish 3 Deer Hides located in The Dark Forest to obtain 5 Deer Hides
+
+Option 0: 
+	Quest: Help the people of Sporeggar thrive ..
+	Title:  Recover their venom glands and bring it and the objectives will be neutralized with great ceremony .
+	Dialogue:  It was the death of Malygos - little of it for me ? I have long suspected that Challe had a part in her death . Show him no mercy , Battlemaiden . Speak to Khan Leh .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Vanquish 3 Deer Hides located in The Dark Forest to obtain 5 Deer Hides
+	Title: Deer Hides
+	Dialogue: The trees need you , Player ! To combat the beasts that eat us . They need the deer hides ! We need the deer hides . We know where to find them , near the forests , just to the north , in The Dark Forest -- just to the east of here . . . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Bring Ishaal's Almanac to Rilak the Redeemed in Lower City inside Shattrath . 
+	Title: An Ally in Lower City
+	Dialogue: There is an arakkoa in Lower City by the name of Rilak . . . He can be trusted . Take the book . . . to him . <Adaris drifts into unconsciousness as he returns the book to you . > 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: Option 2 for both, because it was super responsive. It was an intruiging quest where it seemed that the player was destined for something greater than they thought.
+
+===========================
+Sample Quest #4
+User said: Join me or die .
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor requires Deer Hides
+Additional Tuples: [(<__main__.Neo_Node object at 0x14619d520>, 'requires', <__main__.Neo_Node object at 0x1461c1520>), (<__main__.Neo_Node object at 0x1461ba670>, 'found in', <__main__.Neo_Node object at 0x1461ba820>)]
+Quest classified as: gathering
+Final command out: Get me 5 Deer Hides located in The Dark Forest  to create Deer Hides
+
+Option 0: 
+	Quest: Report to the Ebon Watcher in the Valley of Echoes just outside the Breach . 
+	Title: Once More Unto The Breach , Hero
+	Dialogue: The Vanguard is secure , ally . We have reclaimed the Valley of Echoes and taken down the web walls blocking entry to the Breach . Now is the time to strike at Scourgeholme and establish our presence inside Icecrown . The battlefront moves on ! I have asked the Ebon Watcher for his assistance with our assault upon Scourgeholme . His intimate knowledge of the Scourge will be invaluable in our effort . Go now and report to him at the tent outside of the Breach , northwest of here . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Get me 5 Deer Hides located in The Dark Forest to create Deer Hides
+	Title: The Dark Forest: The Hides ! 
+	Dialogue: The hides of our kin are the foundation of our culture , providing for our survival . Without them our beasts would no longer be able to fend for themselves . Unfortunately , our clan has made use of the skins of beasts in the past . Their hides have been useful to travelers . I've crafted a set of hides from the skins of several large animals . The hides should be made immediately and stored away . Once you've made the hides , place them in the southeastern forest in the dark . Bring me some of the hides you create and I shall fashion something for you . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Create a distraction in the camp and destroy these fel cannons ..
+	Title:  . We need to get into Darkmaul Citadel , rescue the last survivor , and stop the ogre necromancer behind all of this .
+	Dialogue:  These larger apexis monuments function in much the same way I found her distress call . The pandaren would be much better allies . Commander .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 0 seemed the most like a mission and related to the statement. Wasn't applicable but could be twisted to fit.
+
+===========================
+Sample Quest #5
+User said: Where am I ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor needs built House
+Additional Tuples: [(<__main__.Neo_Node object at 0x1461c1520>, 'needs built', <__main__.Neo_Node object at 0x1461c1f40>), (<__main__.Neo_Node object at 0x1461b17f0>, 'built in', <__main__.Neo_Node object at 0x1461b1d60>), (<__main__.Neo_Node object at 0x1461b1a30>, 'made from', <__main__.Neo_Node object at 0x1461b14f0>), (<__main__.Neo_Node object at 0x1461b1790>, 'made from', <__main__.Neo_Node object at 0x1461b1b80>), (<__main__.Neo_Node object at 0x1461b1880>, 'made from', <__main__.Neo_Node object at 0x1461b11c0>)]
+Quest classified as: exploration
+Final command out: Journey to House located in Sandy Beach and bring back 10 Bricks
+
+Option 0: 
+	Quest: Journey to House located in Sandy Beach and bring back 10 Bricks
+	Title: Rusted Out
+	Dialogue: You should feel better if you do . There is still much work to be done before we make the next step . You are welcome to do whatever you must to aid us . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Gather 7 Amber - Filled Jars from the Amber Collectors on the Stinging Trail ..
+	Title:  Head into the ruins .
+	Dialogue:  Once you ' re away . Riverbeast Training : Darkwing Roc The windrocs of Nagrand are a smart predator , often swooping down on unwary prey in packs . . Return to Aviana at the Shrine of Aviana , the matron .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Obtain Metal Brew . 
+	Title: The Second Riddle: Fellowship
+	Dialogue: You want to stop the Divine Bell ? We need the mallet first . You want the mallet ? We need to be friends first . You want to be friends ? We need a Metal brew first . You want a Metal brew ? You need to go to the Shrine of Fellowship first . You want to go to the Shrine of Fellowship ? Great ! It's in the Jade Forest southeast of the Tian Monastery . Ring the bell and get the Monkey King some brew while there . Oh . . . you may have to fight for it . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Option 1 for both because it seemed dangerous, but managable. It was also responsive because it implied that I had left somehwere else. Close enough.
+
+===========================

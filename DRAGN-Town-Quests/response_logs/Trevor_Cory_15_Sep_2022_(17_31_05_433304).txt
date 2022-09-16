@@ -1,0 +1,117 @@
+Sample Quest #1
+User said: Anything for me to do ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor wants hunted Deer
+Additional Tuples: [(<__main__.Neo_Node object at 0x1453699d0>, 'wants hunted', <__main__.Neo_Node object at 0x145369c70>), (<__main__.Neo_Node object at 0x145369fd0>, 'comes from', <__main__.Neo_Node object at 0x145372130>)]
+Quest classified as: gathering
+Final command out: Bring back 10 Deer  which is protected by 8 Deers 
+
+Option 0: 
+	Quest: Retrieve Archmage Vargoth's Staff from Ekkorash the Inquisitor and bring it to Ravandwyr in Area 52 . To bring Ekkorash out of hiding , sprinkle the Conjuring Powder on the brazier in the center of the ruins . 
+	Title: The Archmage's Staff
+	Dialogue: Allow me to introduce myself , Mechanic . I am Ravandwyr , apprentice to the Archmage Vargoth . My master is . . . indisposed , shall we say . I am here on a matter of great importance . The Arklon Ruins southeast of the city are a hotbed of Burning Legion activity . Their purpose in the ruins concerns neither me nor my master , but their leader , Ekkorash , possesses the archmage's staff . This conjuring powder will allow you to draw the demon out of hiding . Sprinkle it on the brazier at the center of the ruins . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Create the Titan Activation Device ..
+	Title:  But the last time out - - Alright , only rule is stay in the inn .
+	Dialogue:  Fight the waves of the harbor . Only wither and decay remains in his wake . Unfortunately , this elixir calls for a rare ore that ' s spurring the harpies to be more peaceful ; Murky is .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Bring back 10 Deer which is protected by 8 Deers 
+	Title: The Wild Hunt
+	Dialogue: Deers are good sport , but if we want them hunting we need to get those hozen out of the way . Get our poachers ? De men keep them far from our patrols . Not that I have any respect that anyone who isn't here wants to risk everything with some crazy game . They're all over in the marsh east of here . I need you to kill that number of deer so we can get a chance at training a few of the new hunters to hunt . And don't forget; you can get paid for hunting too ! I'll try to keep my mouth shut if that's not getting any attention . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: I could see 2 being in a game, but 0 was more interesting and had more components. 1 was off. 
+
+===========================
+Sample Quest #2
+User said: Who is the baddest guy in town ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x145888790>, 'likes to have', <__main__.Neo_Node object at 0x145372250>), (<__main__.Neo_Node object at 0x13ea5af40>, 'stolen by', <__main__.Neo_Node object at 0x1458c7610>)]
+Quest classified as: combat
+Final command out: Fight 53 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Fight 53 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: The Great Dragon
+	Dialogue: You want to be the Dragon of Arelind ? Then you want to fight as my dragon . <The Great Drake's image fills your mind once more . >You look like you might like to join the ranks of the Dragonmaw . But hurry ! The Great Dragons of Arelind are fierce competition and they will throw a great feast ! Go , get your title and prepare for battle ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Attack ! Move ! Collect 100 Sri - La Village had been stolen ..
+	Title:  . > Meet with the Primus in Maldraxxus .
+	Dialogue:  Hellscream ' s eyes are upon you . Speak to the other druids . Take this incense . Give him this . Good luck , Player . He faded away , as Terokk did , to take their .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Destroy 6 Zandalari Offerings . 
+	Title: Dark Offerings
+	Dialogue: The Zandalari's spiritbinders perform dark sacrifices to appease their gods , killing our people in the process . Destroy any Zandalari offerings you can find in Za'Tual to help slow the pace of their dark sacrifices . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: The wording on 0 was kind of strange, but all 3 had good dialogue and titles. 
+
+===========================
+Sample Quest #3
+User said: What can I craft for you ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor does not have Iron
+Additional Tuples: [(<__main__.Neo_Node object at 0x145888e50>, 'does not have', <__main__.Neo_Node object at 0x14557a280>), (<__main__.Neo_Node object at 0x14557bb20>, 'mined at', <__main__.Neo_Node object at 0x14557bc40>), (<__main__.Neo_Node object at 0x14557bbe0>, 'to create', <__main__.Neo_Node object at 0x14557bd00>), (<__main__.Neo_Node object at 0x14557bca0>, 'to create', <__main__.Neo_Node object at 0x14557bdc0>)]
+Quest classified as: gathering
+Final command out: Bring back 5 Iron located in Big Boulder Quarry  to create Armor
+
+Option 0: 
+	Quest: Bring back 5 Iron located in Big Boulder Quarry to create Armor
+	Title: Armor
+	Dialogue: I've got some metal parts lying about the Quarry . I think I could make some armor out of some of those . . . . You'll find the quarry's metal down there and around the edges . Let's use that . We can find the armor materials down into the quarry . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Craft the Sapphronetta Flivvers Action Figure at Pascal - K1N6 ' s database ..
+	Title:  Soon the Raven Mother wishes to test the worthiness of her children stealthily into the Altar of Damnation in Shadowmoon Valley .
+	Dialogue:  This attitude is unbecoming of a king . Ring of Trials ! The current champ is an arakkoa outpost . Talbuk Mastery I don ' .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Find Archmage Aethas Sunreaver outside of Ihgaluk Crag . 
+	Title: Ihgaluk Crag
+	Dialogue: Aethas has taken over at Ihgaluk Crag , to the southeast , continuing his effort to turn the Saurok against the Zandalari and mogu . Go to him , and help in any way that you can . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: 0 was basically exactly what the prompt was, a little bland, but was better compared to the others. 
+
+===========================

@@ -1,0 +1,195 @@
+Sample Quest #1
+User said: Where are the dragon eggs ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23570226039551587]
+Best matching tuples: Trevor wants killed The Great Dragon of Arelind
+Additional Tuples: [(<__main__.Neo_Node object at 0x14225ee80>, 'wants killed', <__main__.Neo_Node object at 0x14225efa0>), (<__main__.Neo_Node object at 0x14225ef40>, 'lives by', <__main__.Neo_Node object at 0x1422660a0>), (<__main__.Neo_Node object at 0x142266040>, 'lives in', <__main__.Neo_Node object at 0x142266160>), (<__main__.Neo_Node object at 0x1422661c0>, 'comes from', <__main__.Neo_Node object at 0x1422662e0>), (<__main__.Neo_Node object at 0x142266280>, 'stolen by', <__main__.Neo_Node object at 0x1422663a0>)]
+Quest classified as: combat
+Final command out: Kill The Great Dragon of Arelind located in Arelind to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Retrieve Archmage Vargoth's Staff from Ekkorash the Inquisitor and bring it to Ravandwyr in Area 52 . To bring Ekkorash out of hiding , sprinkle the Conjuring Powder on the brazier in the center of the ruins . 
+	Title: The Archmage's Staff
+	Dialogue: Allow me to introduce myself , Mechanic . I am Ravandwyr , apprentice to the Archmage Vargoth . My master is . . . indisposed , shall we say . I am here on a matter of great importance . The Arklon Ruins southeast of the city are a hotbed of Burning Legion activity . Their purpose in the ruins concerns neither me nor my master , but their leader , Ekkorash , possesses the archmage's staff . This conjuring powder will allow you to draw the demon out of hiding . Sprinkle it on the brazier at the center of the ruins . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Create the Titan Activation Device ..
+	Title:  But the last time out - - Alright , only rule is stay in the inn .
+	Dialogue:  Fight the waves of the harbor . Only wither and decay remains in his wake . Unfortunately , this elixir calls for a rare ore that ' s spurring the harpies to be more peaceful ; Murky is .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Kill The Great Dragon of Arelind located in Arelind to obtain Gold stolen by The Great Dragon of Arelind
+	Title: Arelind
+	Dialogue: These naga are a menace to us all . They cannot fight with our might . And it is clear now why their leader , the Great Dragon of Arelind lives . Avenge his death and claim all of the stolen gold earned by his death . Make an example out of them . And when I was a child , I watched the Great Dragon slay his father for eating his beloved sister . Speak to my mother if you wish to travel back to Arelind and aid her in recovering the stolen gold . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 1 was hard to understand. Didn't seem like complete idea. Option 0 was good because it was clear and seemed like a response to what I said.
+
+===========================
+Sample Quest #2
+User said: How do I find the end of a rainbow ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x142266400>, 'likes to have', <__main__.Neo_Node object at 0x142266940>), (<__main__.Neo_Node object at 0x14267d6a0>, 'stolen by', <__main__.Neo_Node object at 0x142270460>)]
+Quest classified as: combat
+Final command out: Fight 53 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Fight 53 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: Farewell , Brogg
+	Dialogue: Thanks to you , King Anduin has recovered the stolen trinkets of Highlord Gorammar and the rest of the Winterguard forces . I have instructed an assassin named Brogg to secure the trinkets and return them to me . The Winterguard camp in the Dragonblight will welcome any gold they receive . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Attack ! Move ! Collect 100 Sri - La Village had been stolen ..
+	Title:  . > Meet with the Primus in Maldraxxus .
+	Dialogue:  Hellscream ' s eyes are upon you . Speak to the other druids . Take this incense . Give him this . Good luck , Player . He faded away , as Terokk did , to take their .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Destroy 6 Zandalari Offerings . 
+	Title: Dark Offerings
+	Dialogue: The Zandalari's spiritbinders perform dark sacrifices to appease their gods , killing our people in the process . Destroy any Zandalari offerings you can find in Za'Tual to help slow the pace of their dark sacrifices . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 1 doesn't make sense. Option 0 at least mentioned gold or treasure of some sort which I associated with a rainbow.
+
+===========================
+Sample Quest #3
+User said: How do I build a cabin ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor does not have Iron
+Additional Tuples: [(<__main__.Neo_Node object at 0x14267d940>, 'does not have', <__main__.Neo_Node object at 0x142149d60>), (<__main__.Neo_Node object at 0x142470c40>, 'mined at', <__main__.Neo_Node object at 0x142470d60>), (<__main__.Neo_Node object at 0x142470d00>, 'to create', <__main__.Neo_Node object at 0x142470e20>), (<__main__.Neo_Node object at 0x142470dc0>, 'to create', <__main__.Neo_Node object at 0x142470ee0>)]
+Quest classified as: combat
+Final command out: Kill 3 Iron located in Big Boulder Quarry to obtain 1 Armor
+
+Option 0: 
+	Quest: Build with boldness ! Go with Lilian Voss to her father in the tower is a human nosing around in Horde business ! Retrieve the Crucible of Nazsharin , all that remains of the Mechachicken with these shark parts , we ' ll need only to feed him mana , and lots of fire ..
+	Title:  Talbuk Mastery I don ' t
+	Dialogue:  .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Slay 25 Thunderlord orcs in Grom'gar . 
+	Title: Karg Unchained
+	Dialogue: They took my brothers and sisters . They took my wolf . <Karg lifts his axe and fixes his gaze upon its edge . >Now we take their heads . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Kill 3 Iron located in Big Boulder Quarry to obtain 1 Armor
+	Title: Armor Hardened
+	Dialogue: The Iron dwarves have a lot of armor . We make good armor that they can afford . But some are more armor than others . Here , take out some Iron dwarves and see what you find . Get some samples of their armor to show them we're not afraid to die for our armor ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: Option 0 talked about building something. And the steps to it were very clear. Option 1 just didn't make sense.
+
+===========================
+Sample Quest #4
+User said: How do I feed my sheep ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x13b90ec40>, 'likes to have', <__main__.Neo_Node object at 0x142266130>), (<__main__.Neo_Node object at 0x14277c910>, 'stolen by', <__main__.Neo_Node object at 0x14277c970>)]
+Quest classified as: combat
+Final command out: Fight 5 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Fight 5 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: The Great Dragon
+	Dialogue: So you got Gold ? Great . If you want more , go help out the poor trolls in Shal'Aran ! And gold won't buy you the fancy things , I could use gold . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Speak to Exarch Admetius at Blood Watch . 
+	Title: What We Know . . . 
+	Dialogue: We've learned much of our enemies in recent days . The blood elves are led by a being known as Sironas and plot to destroy us . Ultimately , they seek to enslave O'ros and regain control of the Exodar . Light be praised , we have stopped their supply line by destroying the sun gate . Unfortunately , they continue to use the contaminant of the Vector Coil to poison the land , using the mutagenic properties of the fallout to their advantage . With this knowledge , Admetius has devised a plan . Seek him out . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Build Your Own Raft < Jay looks off in the confusion ..
+	Title:  . What ' s worse is they ' re being used , they grant a boon .
+	Dialogue:  Kill Grozztok within Atul ' Aman . . He tells me to look for the Alliance gunship . Kill 12 Cartel Xy agents just outside of Manaforge B ' naar and retrieve .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Option 1 at least talked about the land being contaminated, I would assume that hay or grass would need to be used to feed the sheep. Therefore the land would need to be healed.
+
+===========================
+Sample Quest #5
+User said: How do I get to the moon ?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor wants hunted Deer
+Additional Tuples: [(<__main__.Neo_Node object at 0x144b38820>, 'wants hunted', <__main__.Neo_Node object at 0x144b38ac0>), (<__main__.Neo_Node object at 0x144b38e20>, 'comes from', <__main__.Neo_Node object at 0x144b38f40>)]
+Quest classified as: gathering
+Final command out: Bring back 10 Deer  which is protected by 8 Deers 
+
+Option 0: 
+	Quest: Retrieve Archmage Vargoth's Staff from Ekkorash the Inquisitor and bring it to Ravandwyr in Area 52 . To bring Ekkorash out of hiding , sprinkle the Conjuring Powder on the brazier in the center of the ruins . 
+	Title: The Archmage's Staff
+	Dialogue: Allow me to introduce myself , Mechanic . I am Ravandwyr , apprentice to the Archmage Vargoth . My master is . . . indisposed , shall we say . I am here on a matter of great importance . The Arklon Ruins southeast of the city are a hotbed of Burning Legion activity . Their purpose in the ruins concerns neither me nor my master , but their leader , Ekkorash , possesses the archmage's staff . This conjuring powder will allow you to draw the demon out of hiding . Sprinkle it on the brazier at the center of the ruins . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Create the Titan Activation Device ..
+	Title:  But the last time out - - Alright , only rule is stay in the inn .
+	Dialogue:  Fight the waves of the harbor . Only wither and decay remains in his wake . Unfortunately , this elixir calls for a rare ore that ' s spurring the harpies to be more peaceful ; Murky is .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Bring back 10 Deer which is protected by 8 Deers 
+	Title: Feeding the Beast
+	Dialogue: Now that you have a supply of food ready for me to share with you , you may as well help me out so I can feed my own brood as well . I've noticed a certain number of elk resting in the southern part of the Snowmist . There should be plenty of them around that you could feed them . If you visit us in the wild , use the elk antlers that you brought . I'll give you your next meal . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Titan Device and Elixer seemed most related to the moon.
+
+===========================
