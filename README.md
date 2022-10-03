@@ -66,8 +66,7 @@ Which quest is most satisfying to you?: 2
 
 Which quest was most responsive to your input?: 2
 
-What was your experience with each quest?
-User responded: I really like that.....
+What was your experience with each quest?: I really like that.....
 ```
 
 This process repeats until the indicated number of quests has been generated. The program then exits and can be run again for the next user.
