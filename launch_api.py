@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify #importing the module
 import json
-from .main import QuestEngine
+from main import QuestEngine
 
 qe = QuestEngine()
 
-app=Flask(__name__, template_folder='html', static_folder='css_js') #instantiating flask object
+app=Flask(__name__, template_folder='./survey/html', static_folder='./survey/css_js') #instantiating flask object
 
 @app.route('/survey')
 def survey():

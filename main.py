@@ -17,7 +17,7 @@ from nltk.tokenize import word_tokenize
 
 # Step 3 imports
 import spacy
-#import classy_classification
+import classy_classification
 import re
 
 # Functions for step 3: turning selected tuples to command
@@ -57,7 +57,6 @@ data = {
                   "I should get you some iron to make a sword",
                   "What else do you need me to get?"]
 }
-
 nlp = spacy.load('en_core_web_lg')
 nlp.add_pipe("text_categorizer", 
     config={
@@ -267,6 +266,10 @@ class QuestEngine:
         command_vals = []
         number_of = None
 
+        loc_str = ""
+        protect_str = ""
+        object_str = ""
+
         # Get start based on classification
         if classification == 'gathering':
             start = random.choice(gathering_start_words)
@@ -288,10 +291,6 @@ class QuestEngine:
 
             # Append quest target value
             command_vals.append(quest_target.get_properties()['name'])
-
-            loc_str = ""
-            protect_str = ""
-            object_str = ""
 
             for tup in additional_tuples:
                 #print(self.verbalize_tuple_2(tup))
@@ -439,7 +438,7 @@ class QuestEngine:
 
     def choose_random_wow_qtd(self):
         # CHOOSE A RANDOM WOW QUEST
-        wow_lines = open('DRAGN-Town-Quests/wow_v2_cleaned.tsv', 'r').readlines()
+        wow_lines = open('./wow_v2_cleaned.tsv', 'r').readlines()
         rand_quest_idx = random.randint(0, len(wow_lines)-1)
         wow_quest = wow_lines[rand_quest_idx].split('\t')
         wow_quest[0]= re.sub('([.,!?()])', r' \1 ', wow_quest[0])
@@ -530,15 +529,14 @@ class QuestEngine:
             log = None
 
         # initialize n-gram model
-        m = create_ngram_model(4, 'DRAGN-Town-Quests/wow_v2_cleaned.tsv')
+        m = create_ngram_model(4, './wow_v2_cleaned.tsv')
         random.seed(datetime.now())
-
 
         #quests = []
 
         ## GPT-2
-        #quest_command = self.verbalize_command(user_in, log)
-        #final_quest = self.generate_gpt2_qtd(quest_command)
+        quest_command = self.verbalize_command(user_in, log)
+        final_quest = self.generate_gpt2_qtd(quest_command)
         #quests.append(final_quest)
 
         # N-GRAM
@@ -557,15 +555,15 @@ class QuestEngine:
             #"from":json_data["name"],
             #"said":json_data["data"]
             # gpt2
+            "gpt2":final_quest,
             # ngram
             "ngram":n_gram_quest2,
             # wow
             "wow":wow_quest_final
         }
 
-
         # Close dao and file
-        #self.dao.close()
+        self.dao.close()
 
         if log is not None:
             log.close()
@@ -586,7 +584,7 @@ class QuestEngine:
             date = datetime.now()
             curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
 
-            file_name = 'DRAGN-Town-Quests/response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
+            file_name = './response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
 
             log = open(file_name, "w")
             log.write("")
@@ -600,7 +598,7 @@ class QuestEngine:
 
 
         # initialize n-gram model
-        m = create_ngram_model(4, 'DRAGN-Town-Quests/wow_v2_cleaned.tsv')
+        m = create_ngram_model(4, './wow_v2_cleaned.tsv')
         random.seed(datetime.now())
 
 
