@@ -17,7 +17,8 @@ from nltk.tokenize import word_tokenize
 
 # Step 3 imports
 import spacy
-import classy_classification
+#import classy_classification
+import re
 
 # Functions for step 3: turning selected tuples to command
 import random
@@ -436,6 +437,143 @@ class QuestEngine:
 
         return command # Command to return out
 
+    def choose_random_wow_qtd(self):
+        # CHOOSE A RANDOM WOW QUEST
+        wow_lines = open('DRAGN-Town-Quests/wow_v2_cleaned.tsv', 'r').readlines()
+        rand_quest_idx = random.randint(0, len(wow_lines)-1)
+        wow_quest = wow_lines[rand_quest_idx].split('\t')
+        wow_quest[0]= re.sub('([.,!?()])', r' \1 ', wow_quest[0])
+        wow_quest[0] = re.sub('\s{2,}', ' ', wow_quest[0])
+        wow_quest[1]= re.sub('([.,!?()])', r' \1 ', wow_quest[1])
+        wow_quest[1] = re.sub('\s{2,}', ' ', wow_quest[1])
+        wow_quest[2]= re.sub('([.,!?()])', r' \1 ', wow_quest[2])
+        wow_quest[2] = re.sub('\s{2,}', ' ', wow_quest[2])
+
+        wow_quest_final = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
+        return wow_quest_final
+
+    def generate_gpt2_qtd(self, quest_command):
+        # Generate quest output for user using language model
+        prompt = quest_command + "<div>"
+        sequences = self.generator(prompt, max_length=200, num_return_sequences=1)
+        final_quest = sequences[0]['generated_text'].split("<eos>")[0]
+
+        final_quest = re.sub('([.,!?()])', r' \1 ', final_quest)
+        final_quest = re.sub('\s{2,}', ' ', final_quest)
+
+        split_final_quest = final_quest.split('<div>')
+
+        final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
+        final_quest = re.sub('George', 'Player', final_quest)
+        return final_quest
+
+    def generate_ngram_qtd(self, user_in, m):
+        # Generate and save n-gram quest
+        # Grab a random quest prompt for n-gram model
+        ngram_prompt_options = ["explore", "gather", "attack", "defend", "search", "destroy", "mine", "hunt", "help", "craft", "create", "build"]
+        input_trigger = False
+        trigger_word = None
+        for word in user_in.split(' '):
+            if word.lower() in ngram_prompt_options:
+                input_trigger = True
+                trigger_word = word
+        if input_trigger == True:
+            ngram_input = trigger_word
+        else:
+            ngram_input = ngram_prompt_options[random.randint(0,len(ngram_prompt_options)-1)]
+        n_gram_quest = m.generate_text(60, ngram_input[0].upper() + ngram_input[1:])
+        
+        ngram_quest = ""
+        ngram_title = ""
+        ngram_dialogue = ""
+        ngram_parser_mode = 0
+        for idx in range(len(n_gram_quest)):
+            # append to quest
+            if ngram_parser_mode == 0:
+                ngram_quest += n_gram_quest[idx]
+                if n_gram_quest[idx] == ".":
+                    ngram_parser_mode += 1
+                    ngram_quest += '.'
+            # append to title
+            elif ngram_parser_mode == 1:
+                ngram_title += n_gram_quest[idx]
+                if n_gram_quest[idx] == "." and len(ngram_title) > 4:
+                    ngram_parser_mode += 1
+                    #ngram_title += '.'
+            # append to dialogue
+            else:
+                ngram_dialogue += n_gram_quest[idx]
+
+        n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
+
+        n_gram_quest2 = re.sub('George', 'Player', n_gram_quest2)
+
+        return n_gram_quest2
+    
+
+    def receive_input_API(self, user_in, logging=False):
+        if logging: 
+            ## Get inputs for logging file
+            file_name = ''
+
+            #mod_name = input("Test Moderator, please type your name: ")
+            #user_name = input("Type the name of the participant: ")
+
+            date = datetime.now()
+            curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
+
+            #file_name = 'DRAGN-Town-Quests/response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
+
+            log = open(file_name, "w")
+            log.write("")
+        else:
+            log = None
+
+        # initialize n-gram model
+        m = create_ngram_model(4, 'DRAGN-Town-Quests/wow_v2_cleaned.tsv')
+        random.seed(datetime.now())
+
+
+        #quests = []
+
+        ## GPT-2
+        #quest_command = self.verbalize_command(user_in, log)
+        #final_quest = self.generate_gpt2_qtd(quest_command)
+        #quests.append(final_quest)
+
+        # N-GRAM
+        n_gram_quest2 = self.generate_ngram_qtd(user_in, m)
+        #quests.append(n_gram_quest2)
+
+        # WOW
+        wow_quest_final = self.choose_random_wow_qtd()
+        #quests.append(wow_quest_final)
+
+        # Present both options to the user in a randomized order
+        #idx_list = [quests.index(q) for q in quests]
+        #random.shuffle(idx_list)
+
+        res = {
+            #"from":json_data["name"],
+            #"said":json_data["data"]
+            # gpt2
+            # ngram
+            "ngram":n_gram_quest2,
+            # wow
+            "wow":wow_quest_final
+        }
+
+
+        # Close dao and file
+        #self.dao.close()
+
+        if log is not None:
+            log.close()
+
+        #sys.exit()
+        return res
+
+
     def receive_input(self, logging=True):
 
         if logging: 
@@ -482,95 +620,26 @@ class QuestEngine:
 
                 quests = []
 
-                ## Get quest command from KG
+                ## GPT-2
                 quest_command = self.verbalize_command(user_in, log)
-
-                # Generate quest output for user using language model
-                prompt = quest_command + "<div>"
-                sequences = self.generator(prompt, max_length=200, num_return_sequences=1)
-                final_quest = sequences[0]['generated_text'].split("<eos>")[0]
-
-                import re
-                final_quest = re.sub('([.,!?()])', r' \1 ', final_quest)
-                final_quest = re.sub('\s{2,}', ' ', final_quest)
-                #print(s)
-
-                split_final_quest = final_quest.split('<div>')
-
-                final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
-                final_quest = re.sub('George', 'Player', final_quest)
-                ## Return final quest to user
+                final_quest = self.generate_gpt2_qtd(quest_command)
                 quests.append(final_quest)
 
-                # Generate and save n-gram quest
-                # Grab a random quest prompt for n-gram model
-                ngram_prompt_options = ["explore", "gather", "attack", "defend", "search", "destroy", "mine", "hunt", "help", "craft", "create", "build"]
-                input_trigger = False
-                trigger_word = None
-                for word in user_in.split(' '):
-                    if word.lower() in ngram_prompt_options:
-                        input_trigger = True
-                        trigger_word = word
-                if input_trigger == True:
-                    ngram_input = trigger_word
-                else:
-                    ngram_input = ngram_prompt_options[random.randint(0,len(ngram_prompt_options)-1)]
-                n_gram_quest = m.generate_text(60, ngram_input[0].upper() + ngram_input[1:])
-                
-                ngram_quest = ""
-                ngram_title = ""
-                ngram_dialogue = ""
-                ngram_parser_mode = 0
-                for idx in range(len(n_gram_quest)):
-                    # append to quest
-                    if ngram_parser_mode == 0:
-                        ngram_quest += n_gram_quest[idx]
-                        if n_gram_quest[idx] == ".":
-                            ngram_parser_mode += 1
-                            ngram_quest += '.'
-                    # append to title
-                    elif ngram_parser_mode == 1:
-                        ngram_title += n_gram_quest[idx]
-                        if n_gram_quest[idx] == "." and len(ngram_title) > 4:
-                            ngram_parser_mode += 1
-                            #ngram_title += '.'
-                    # append to dialogue
-                    else:
-                        ngram_dialogue += n_gram_quest[idx]
-
-                n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
-
-                n_gram_quest2 = re.sub('George', 'Player', n_gram_quest2)
-
+                ## N-GRAM
+                n_gram_quest2 = self.generate_ngram_qtd(user_in, m)
                 quests.append(n_gram_quest2)
 
-
-                # CHOOSE A RANDOM WOW QUEST
-                wow_lines = open('DRAGN-Town-Quests/wow_v2_cleaned.tsv', 'r').readlines()
-                rand_quest_idx = random.randint(0, len(wow_lines)-1)
-                wow_quest = wow_lines[rand_quest_idx].split('\t')
-                wow_quest[0]= re.sub('([.,!?()])', r' \1 ', wow_quest[0])
-                wow_quest[0] = re.sub('\s{2,}', ' ', wow_quest[0])
-                wow_quest[1]= re.sub('([.,!?()])', r' \1 ', wow_quest[1])
-                wow_quest[1] = re.sub('\s{2,}', ' ', wow_quest[1])
-                wow_quest[2]= re.sub('([.,!?()])', r' \1 ', wow_quest[2])
-                wow_quest[2] = re.sub('\s{2,}', ' ', wow_quest[2])
-
-                wow_quest_final = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
-                
-
-
+                ## WOW
+                wow_quest_final = self.choose_random_wow_qtd()
                 quests.append(wow_quest_final)
 
                 # Present both options to the user in a randomized order
                 idx_list = [quests.index(q) for q in quests]
-
                 random.shuffle(idx_list)
 
                 for i, index in enumerate(idx_list):
                     out_string = f"{nl}Option {i}: {quests[index]}"
                     print(out_string)
-
 
                     if logging: 
                         log.write(f"{nl}{out_string}")
@@ -578,22 +647,18 @@ class QuestEngine:
 
                 user_selected = input("\nWhich quest is most satisfying to you? ")
                 
-
                 if logging:
                     log.write("\nWhich quest is most satisfying to you?\n")
                     log.write(f'User selected option #{user_selected}')
                     log.write("\n")
 
-                
                 user_selected = input("\nWhich quest was most responsive to your input? ")
                 
-
                 if logging:
                     log.write("\nWhich quest was most responsive to your input?\n")
                     log.write(f'User selected option #{user_selected}')
                     log.write("\n")
 
-                
                 user_thoughts = input("\nWhat was your experience with each quest? What did you like/dislike about each one? Please respond in a short paragraph.\n")
 
                 if logging:
@@ -601,14 +666,12 @@ class QuestEngine:
                     log.write(f'User responded: {user_thoughts}')
                     log.write("\n")
 
-
                 print("============================")
 
                 if logging:
                     log.write("\n===========================\n")
                 
                 complete_quests += 1
-
 
 
         print("\n\nThank you for participating in this survey!!")
