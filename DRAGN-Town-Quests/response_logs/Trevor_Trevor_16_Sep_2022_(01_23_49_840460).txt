@@ -1,0 +1,40 @@
+Sample Quest #1
+User said: What do you want?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor needs built House
+Additional Tuples: [(<__main__.Neo_Node object at 0x146efffd0>, 'needs built', <__main__.Neo_Node object at 0x1469cf2e0>), (<__main__.Neo_Node object at 0x1469d8e50>, 'built in', <__main__.Neo_Node object at 0x1469d8f70>), (<__main__.Neo_Node object at 0x1469d8f10>, 'made from', <__main__.Neo_Node object at 0x1469df070>), (<__main__.Neo_Node object at 0x1469d8fd0>, 'made from', <__main__.Neo_Node object at 0x1469df130>), (<__main__.Neo_Node object at 0x1469df0d0>, 'made from', <__main__.Neo_Node object at 0x1469df1f0>)]
+Quest classified as: gathering
+Final command out: Find House located in Sandy Beach  to create Bricks
+
+Option 0: 
+	Quest: Help Protector Kah-Rev defeat the invading Mawsworn . 
+	Title: Defending the Vault
+	Dialogue: To reach the vault , we'll need to carve a path through the attacking Mawsworn . The covenants are doing their best to drive off these monstrosities , but our allies can't hold out forever . The Mawsworn are intent on reaching the prize before you . We could use your help fighting against the Jailer's forces , Maw Walker . Purpose guide us all . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Explore ..
+	Title:  Return it to him ? My last message from Mountaineer Stormpike said he ' d check in when we got communications back but he hasn ' t driven you out , and we got all these people that you ' re welcome to come along for the ride .
+	Dialogue:  The broken piece must be through there . T . .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Find House located in Sandy Beach to create Bricks
+	Title: Not So Fast
+	Dialogue: Are you still here yet , archaeologist ? I've managed to salvage all the construction scraps of my last excavation through here . The tide is turning against us and I suspect that our foothold is being lost fast . Unfortunately , I can't leave my daughter behind without a fight . Why don't you head back to the beach and lend a hand with this ? I've got bits of rubble scattered about by the sea . If we want to make it out alive , we'll need to get them somewhere to start . Please , help me out as best you can and if we get separated , we'll join you . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: 2
+
+===========================
+Sample Quest #2

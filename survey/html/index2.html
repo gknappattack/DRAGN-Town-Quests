@@ -1,0 +1,54 @@
+<!--  how to use css in python_ flask-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--  Load CSS in Flask with html-->
+    <link rel="stylesheet" href='/css_js/main.css' />
+ 
+<!--  Load JavaScript in Flask with html-->
+  <script>
+    alert("Page has been loaded successfully")
+  </script>
+ 
+  </head>
+  <body>
+    <h1>Flask Template tutorial</h1>
+    <p>Integrating HTML, CSS and Javascript in Flask Web Framework</p>
+    <p id="placeholder">This is the default placeholder.</p>
+    <form action="mywebsite.com" method="POST">
+        <!--Input of any type and textareas goes in here-->
+        <input type="text" id="inputText" placeholder="Enter name" />
+    </form>
+        <button onclick="myFunction(this)">Try it</button>
+
+    <script>
+        function myFunction(myTextField) {
+            let userText = document.getElementById("inputText").value;
+            document.getElementById("inputText").value = "";
+            document.getElementById("placeholder").textContent = "Awaiting Response from Server . . ."
+            // SEND JSON TO SERVER
+            let xhr = new XMLHttpRequest();
+            let url = "/chat";
+
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            
+            // create a state change callback
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Print received data from server
+                        console.log(JSON.parse(xhr.responseText))
+                        document.getElementById("placeholder").textContent = JSON.parse(xhr.responseText).gpt2.quest;
+                }
+            };
+
+            // Converting JSON data to string
+            var data = JSON.stringify({"name":"Trevor", "data":userText});
+
+            // Sending data with the request
+            xhr.send(data);
+        }
+    </script>
+
+  </body>
+</html>

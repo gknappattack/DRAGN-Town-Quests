@@ -1,53 +1,118 @@
-<!--  how to use css in python_ flask-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--  Load CSS in Flask with html-->
-    <link rel="stylesheet" href='/css_js/main.css' />
- 
-<!--  Load JavaScript in Flask with html-->
-  <script>
-    alert("Page has been loaded successfully")
-  </script>
- 
-  </head>
-  <body>
-    <h1>Flask Template tutorial</h1>
-    <p>Integrating HTML, CSS and Javascript in Flask Web Framework</p>
-    <p id="placeholder">This is the default placeholder.</p>
-    <form action="mywebsite.com" method="POST">
-        <!--Input of any type and textareas goes in here-->
-        <input type="text" id="inputText" placeholder="Enter name" />
-    </form>
-        <button onclick="myFunction(this)">Try it</button>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGN Lab Survey</title>
+    <link rel="stylesheet" href="../css_js/style.css"/>
+    <link rel="javascript" href="../css_js/app.js"/>
 
+</head>
+<body>
+    <div class="header">
+        <div class="heads" id="header_left">
+            IMAGE
+        </div>
+        <div class="heads" id="header_middle">
+            <h2>DRAGN LABS SURVEY</h2>
+        </div>
+        <div class="heads" id="header_right">
+            LOGO
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="instructions" id="instructions">
+            If you want to have fun read the following instructions carefully
+        </div>
+
+        <div id="output">
+            Output of the Backend
+        </div>
+
+        <div id="questionairesToSend" style="display: none;">
+            <form class="form-id">
+                <div id="question">
+                    <h4>Q1: what is the most question is most?</h4>
+                    <div class="radioContainer">
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option11" name="question1" value="1">
+                            <label for="option1">1</label>
+                        </div>
+                       <div class="optionsForRadio">
+                            <input type="radio" id="option21" name="question1" value="2">
+                            <label for="option2">2</label>
+                        </div>
+                    </div>
+                    
+                    <br>
+                </div>
+
+                <div id="question">
+                    <h4>Q2: Did you sleep well?</h4>
+                    <div class="radioContainer">
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option21" name="question2" value="1">
+                            <label for="option1">1</label>
+                        </div>
+                       <div class="optionsForRadio">
+                            <input type="radio" id="option22" name="question2" value="2">
+                            <label for="option2">2</label>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+                <div id="question">
+                    <h4>Q3: What are you thinking</h4>
+                    <textarea id="question3" rows="5" placeholder="Thoughts on question3"></textarea>
+                </div>
+                <span class="message" id="messageQuestionare" style="display: none;">PLEASE FILL ALL THE REQUIRED FIELDS :)</span>
+                <br>
+
+                <input type="button" value="Send" onclick="submitQuestionaire();">
+            </form>
+        </div>
+
+
+        <div id="inputFromUser">
+            <form id="form-id1">
+                <label for="name">Input</label>
+                <input id="userInput" type="text">
+                <input type="button" value="Submit" onclick="submitInput();">
+            </form>
+            <span class="message" id="messageValidation" style="display: none;">PLEASE ADD INPUT :)</span>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+    <script type="text/javascript"  src="../css_js/app.js" defer></script>
+    
     <script>
-        function myFunction(myTextField) {
-            let userText = document.getElementById("inputText").value;
-            document.getElementById("inputText").value = "";
-            document.getElementById("placeholder").textContent = "Awaiting Response from Server . . ."
-            // SEND JSON TO SERVER
-            let xhr = new XMLHttpRequest();
-            let url = "/chat";
-
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            
-            // create a state change callback
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                        // Print received data from server
-                        document.getElementById("placeholder").textContent = xhr.responseText;
+        window.onload = function() {
+            $("#form-id1").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    submitInput(); 
+                    resetAllFields();
+                    event.preventDefault();
+                    return false;
                 }
-            };
+            });
 
-            // Converting JSON data to string
-            var data = JSON.stringify({"name":"Trevor", "data":userText});
-
-            // Sending data with the request
-            xhr.send(data);
-        }
+            $("#form-id").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        };
     </script>
-
-  </body>
+    
+</body>
 </html>

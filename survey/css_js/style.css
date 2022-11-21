@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.heads{
+    display: flex;
+}
+
+.message{
+    color: red;
+    font-size: smaller;
+}
+
+#instructions{
+    height: 100px;
+}
+
+#output{
+    display: flex;
+    border-radius: 1;
+    border: dashed 2px;
+    border-color: black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100px;
+
+}
+
+.radioContainer {
+    display: flex;
+    justify-content:center;
+
+}
+
+.optionsForRadio{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+#questionairesToSend{
+    height: 450px;
+}
+
+#inputFromUser{
+    margin-top: 20px;
+}

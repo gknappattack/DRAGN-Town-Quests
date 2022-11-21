@@ -448,7 +448,8 @@ class QuestEngine:
         wow_quest[2]= re.sub('([.,!?()])', r' \1 ', wow_quest[2])
         wow_quest[2] = re.sub('\s{2,}', ' ', wow_quest[2])
 
-        wow_quest_final = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
+        #wow_quest_final = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
+        wow_quest_final = "|Quest: {}|Title: {}|Dialogue: {}".format(wow_quest[0], wow_quest[1], wow_quest[2])
         return wow_quest_final
 
     def generate_gpt2_qtd(self, quest_command):
@@ -462,7 +463,8 @@ class QuestEngine:
 
         split_final_quest = final_quest.split('<div>')
 
-        final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
+        #final_quest = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
+        final_quest = "Quest: {}|Title: {}|Dialogue: {}".format(split_final_quest[0], split_final_quest[1], split_final_quest[2])
         final_quest = re.sub('George', 'Player', final_quest)
         return final_quest
 
@@ -503,8 +505,8 @@ class QuestEngine:
             else:
                 ngram_dialogue += n_gram_quest[idx]
 
-        n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
-
+        #n_gram_quest2 = "\n\tQuest: {}\n\tTitle: {}\n\tDialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
+        n_gram_quest2 = "|Quest: {}|Title: {}|Dialogue: {} .".format(ngram_quest, ngram_title, ngram_dialogue)
         n_gram_quest2 = re.sub('George', 'Player', n_gram_quest2)
 
         return n_gram_quest2
@@ -550,17 +552,23 @@ class QuestEngine:
         # Present both options to the user in a randomized order
         #idx_list = [quests.index(q) for q in quests]
         #random.shuffle(idx_list)
+        gp = final_quest.split('|')
+        ng = n_gram_quest2.split('|')
+        wow = wow_quest_final.split('|')
 
         res = {
             #"from":json_data["name"],
             #"said":json_data["data"]
             # gpt2
-            "gpt2":final_quest,
+            "gpt2": {"quest":gp[0], "title":gp[1], "dialogue":gp[2]},
             # ngram
-            "ngram":n_gram_quest2,
+            "ngram": {"quest":ng[0], "title":ng[1], "dialogue":ng[2]},
             # wow
-            "wow":wow_quest_final
+            "wow": {"quest":wow[0], "title":wow[1], "dialogue":wow[2]}
         }
+
+        print('finalquest: ', final_quest)
+        print('gp: ', gp)
 
         # Close dao and file
         self.dao.close()
