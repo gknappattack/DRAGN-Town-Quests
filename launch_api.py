@@ -17,10 +17,13 @@ def chat():
     print("THIS IS THE INPUT: ", json_data)
 
     # THIS IS WHERE I NEED TO PARSE THE INPUT AND RUN IT THROUGH THE MODELS AND RETURN
-
-    res = qe.receive_input_API(json_data["data"])
-
-    return jsonify(res)
+    if json_data["input"]:
+        res = qe.receive_input_API(json_data["message"])
+        print("The Res: ", res)
+        return jsonify(res)
+    else:
+        print("Sending Back to Front End. . .")
+        return jsonify(json_data)
 
 
 @app.route('/') #defining a route in the application

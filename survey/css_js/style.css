@@ -6,12 +6,17 @@
     
 }
 
+#dragnLogo{
+    height: 100px;
+    width: 120px;
+}
+
 .header{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 20%;
     margin-bottom: 30px;
 }
 
@@ -25,18 +30,26 @@
 }
 
 #instructions{
-    height: 100px;
+    height: 20%;
+    margin-bottom: 20px;
+}
+
+#boldtext{
+    font-weight: bold;
 }
 
 #output{
+    padding: 10px;
     display: flex;
     border-radius: 1;
     border: dashed 2px;
     border-color: black;
     align-items: center;
-    text-align: center;
+    text-align: left;
     justify-content: center;
-    height: 100px;
+    height: 50%;
+    margin-top: 20px;
+    margin-bottom:30px;
 
 }
 
@@ -61,3 +74,177 @@
 #inputFromUser{
     margin-top: 20px;
 }
+
+#firstResponse{
+    border-bottom: 2px solid #000000; 
+    margin-bottom:10px;
+}
+
+#secondResponse{
+    border-bottom: 2px solid #000000; 
+    margin-bottom:10px;
+}
+
+#thirdResponse{
+    margin-bottom:10px;
+}
+
+.box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+  .bar {
+    width: 90%;
+    height: 10px;
+    background-color: aliceblue;
+    border-radius: 5px;
+  }
+  
+  .circle-bar {
+    height: 50px;
+    background: none;
+    border: whitesmoke solid 5px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .circle {
+    width: 20px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #000000e1;
+    animation: load3 5s ease infinite;
+  }
+  @keyframes load3 {
+    0% {
+      height: 10px;
+    }
+    20% {
+      height: 20px;
+    }
+    40% {
+      height: 30px;
+    }
+    60% {
+      height: 30px;
+    }
+    80% {
+      height: 20px;
+    }
+    100% {
+      height: 10px;
+    }
+  }
+  /* ------------------------------------------------------------------- */
+  .circle-0 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #000000e1;
+    animation: load4 5s ease infinite;
+  }
+  @keyframes load4 {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  /* ------------------------------------------------------------------------ */
+  .circle-1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #000000e1;
+  }
+  .circle1 {
+    animation: c1 3s ease 0s infinite;
+  }
+  @keyframes c1 {
+    0% {
+      transform: scale(0);
+    }
+    35%,
+    65% {
+      transform: scale(1);
+    }
+    65%,
+    100% {
+      transform: scale(0);
+    }
+  }
+  .circle2 {
+    animation: c2 3s ease 0.2s infinite;
+  }
+  @keyframes c2 {
+    0% {
+      transform: scale(0);
+    }
+    35%,
+    65% {
+      transform: scale(1);
+    }
+    65%,
+    100% {
+      transform: scale(0);
+    }
+  }
+  .circle3 {
+    animation: c3 3s ease 0.4s infinite;
+  }
+  @keyframes c3 {
+    0% {
+      transform: scale(0);
+    }
+    35%,
+    65% {
+      transform: scale(1);
+    }
+    65%,
+    100% {
+      transform: scale(0);
+    }
+  }
+  .circle4 {
+    animation: c4 3s ease 0.6s infinite;
+  }
+  @keyframes c4 {
+    0% {
+      transform: scale(0);
+    }
+    35%,
+    65% {
+      transform: scale(1);
+    }
+    65%,
+    100% {
+      transform: scale(0);
+    }
+  }
+  .circle5 {
+    animation: c4 3s ease 0.8s infinite;
+  }
+  @keyframes c4 {
+    0% {
+      transform: scale(0);
+    }
+    35%,
+    65% {
+      transform: scale(1);
+    }
+    65%,
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+

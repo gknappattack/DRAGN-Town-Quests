@@ -12,13 +12,13 @@
 <body>
     <div class="header">
         <div class="heads" id="header_left">
-            IMAGE
+            <img id="dragnLogo" src="../css_js/DRAGNlogo.png" alt="">
         </div>
         <div class="heads" id="header_middle">
             <h2>DRAGN LABS SURVEY</h2>
         </div>
         <div class="heads" id="header_right">
-            LOGO
+            <img id="dragnLogo" src="../css_js/DRAGNlogo.png" alt="">
         </div>
     </div>
 
@@ -29,7 +29,22 @@
         </div>
 
         <div id="output">
-            Output of the Backend
+            <div id="initialTextInOutput">Waiting for you to put in an input. Submit once your done!</div>
+            <div id="loadingPopup" class="box" style="display: none;">
+                <div class="bar circle-bar">
+                    <div class="circle-1 circle1"></div>
+                    <div class="circle-1 circle2"></div>
+                    <div class="circle-1 circle3"></div>
+                    <div class="circle-1 circle4"></div>
+                    <div class="circle-1 circle5"></div>
+                </div>
+            </div>
+            <div id="server_responses">
+                <div id="firstResponse"></div>
+                <div id="secondResponse"></div>
+                <div id="thirdResponse"></div>
+            </div>
+
         </div>
 
         <div id="questionairesToSend" style="display: none;">
@@ -44,6 +59,11 @@
                        <div class="optionsForRadio">
                             <input type="radio" id="option21" name="question1" value="2">
                             <label for="option2">2</label>
+                        </div>
+
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option31" name="question1" value="3">
+                            <label for="option3">3</label>
                         </div>
                     </div>
                     
@@ -61,6 +81,12 @@
                             <input type="radio" id="option22" name="question2" value="2">
                             <label for="option2">2</label>
                         </div>
+
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option23" name="question2" value="3">
+                            <label for="option3">3</label>
+                        </div>
+
                     </div>
                     <br>
                 </div>
