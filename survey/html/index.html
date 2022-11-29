@@ -24,26 +24,51 @@
 
     <div class="container">
         
-        <div class="instructions" id="instructions">
+        <center><div class="instructions" id="instructions">
             Thank you for participating in our research.
             <br>
             <br>
-            Things to consider:
+            We are researching a novel approach to generating quests within video games.
+            In this survey, you will be "interacting" with an Non-Player Character (NPC) 4 different times. Each of these 
+            interactions should be treated as if you were walking up to a new NPC for the first time with the 
+            intention of obtaining a quest. For example, if I were to walk up to 
+            an NPC for the first time I might say something like, "How can I help you?", "I want to kill a dragon.",
+            or maybe "Can you craft me a sword?".
             <br>
-            - refreshing will restart your session
             <br>
-            - There will be a total of 4 cycles
+            Each "Quest" consists of three parts: A "title" (the title of the quest which
+            would be added to your questlog), a "quest" (This is the task that is needing to be
+            completed for the quest), and a "dialogue" (This is the dialogue that an NPC
+            would say to you when giving you the "quest").
             <br>
-            - Example: "I want to kill a dragon." or "How can I help you?"
             <br>
-            - Load time is ~15-30 seconds, please be patient!
-        </div>
+            For each interaction, you'll be presented with three possible quests and asked to 
+            answer some questions about them.
+            <br>
+            <br>
+            <b><u>Things to consider:</u></b>
+            <br>
+            Don't refresh the page! It will erase your prior responses.
+            <br>
+            The NPC quests are generated in real-time by our AI system, so please be patient! Generation load time is ~15-30 seconds.
+            <br>
+            For any questions, comments, or concerns, please email trevor.clark.ashby@gmail.com
+        </div></center>
 
         <div id="output">
-            <div id="initialTextInOutput">Waiting for your input. Click 'Submit' once your done.
-                <center><p id="remainingText">Round(s) Remaining: 4</p></center>
+            <div id="initialTextInOutput"><b>You've just met a new NPC. What do you want to say?</b> <br> <i>Waiting for your input. Click 'Submit' once your done.</i>
+                <center><p id="remainingText">Round(s) Remaining: 4</p>
+                <div id="inputFromUser">
+                    <form id="form-id1">
+                        <label for="name">Input</label>
+                        <input id="userInput" type="text">
+                        <input type="button" value="Submit" onclick="submitInput();">
+                    </form>
+                    <span class="message" id="messageValidation" style="display: none;">PLEASE ADD INPUT :)</span>
+                </div></center>
             </div>    
             <div id="loadingPopup" class="box" style="display: none;">
+                <p id="aiThinking">The AI is Thinking...</p>
                 <div class="bar circle-bar">
                     <div class="circle-1 circle1"></div>
                     <div class="circle-1 circle2"></div>
@@ -57,7 +82,6 @@
                 <div id="secondResponse"></div>
                 <div id="thirdResponse"></div>
             </div>
-
         </div>
 
         <div id="questionairesToSend" style="display: none;">
@@ -116,14 +140,7 @@
         </div>
 
 
-        <div id="inputFromUser">
-            <form id="form-id1">
-                <label for="name">Input</label>
-                <input id="userInput" type="text">
-                <input type="button" value="Submit" onclick="submitInput();">
-            </form>
-            <span class="message" id="messageValidation" style="display: none;">PLEASE ADD INPUT :)</span>
-        </div>
+        
     </div>
 
 
