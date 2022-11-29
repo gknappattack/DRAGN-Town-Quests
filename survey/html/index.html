@@ -25,11 +25,24 @@
     <div class="container">
         
         <div class="instructions" id="instructions">
-            If you want to have fun read the following instructions carefully
+            Thank you for participating in our research.
+            <br>
+            <br>
+            Things to consider:
+            <br>
+            - refreshing will restart your session
+            <br>
+            - There will be a total of 4 cycles
+            <br>
+            - Example: "I want to kill a dragon." or "How can I help you?"
+            <br>
+            - Load time is ~15-30 seconds, please be patient!
         </div>
 
         <div id="output">
-            <div id="initialTextInOutput">Waiting for you to put in an input. Submit once your done!</div>
+            <div id="initialTextInOutput">Waiting for your input. Click 'Submit' once your done.
+                <center><p id="remainingText">Round(s) Remaining: 4</p></center>
+            </div>    
             <div id="loadingPopup" class="box" style="display: none;">
                 <div class="bar circle-bar">
                     <div class="circle-1 circle1"></div>
@@ -50,7 +63,7 @@
         <div id="questionairesToSend" style="display: none;">
             <form class="form-id">
                 <div id="question">
-                    <h4>Q1: what is the most question is most?</h4>
+                    <h4>Q1: Which prompt did you feel was most responsive to your input?</h4>
                     <div class="radioContainer">
                         <div class="optionsForRadio">
                             <input type="radio" id="option11" name="question1" value="1">
@@ -71,7 +84,7 @@
                 </div>
 
                 <div id="question">
-                    <h4>Q2: Did you sleep well?</h4>
+                    <h4>Q2: Which prompt did you feel was most exciting/creative (i.e. Which would be the most fun to do in a game)?</h4>
                     <div class="radioContainer">
                         <div class="optionsForRadio">
                             <input type="radio" id="option21" name="question2" value="1">
@@ -92,8 +105,8 @@
                 </div>
 
                 <div id="question">
-                    <h4>Q3: What are you thinking</h4>
-                    <textarea id="question3" rows="5" placeholder="Thoughts on question3"></textarea>
+                    <h4>Q3: Write 2-3 sentences explaining your answers to Q1 & Q2. (i.e. I felt that Q1 was responsive to my input because...)</h4>
+                    <textarea id="question3" rows="10" placeholder="Thoughts on question3"></textarea>
                 </div>
                 <span class="message" id="messageQuestionare" style="display: none;">PLEASE FILL ALL THE REQUIRED FIELDS :)</span>
                 <br>

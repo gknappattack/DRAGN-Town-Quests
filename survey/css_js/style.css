@@ -10,6 +10,14 @@
     height: 100px;
     width: 120px;
 }
+#question3{
+    width: 50%;
+}
+
+#remainingText{
+    align-content: center;
+    text-align: center;
+}
 
 .header{
     display: flex;

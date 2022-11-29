@@ -1,5 +1,5 @@
 var url = "/chat"
-var counter = 2; //This counter allows you to take the survey 2 times
+var counter = 4; //This counter allows you to take the survey 2 times
 
 function resetAllFields(){
     document.getElementById("userInput").value = "";
@@ -102,6 +102,8 @@ function submitQuestionaire(){
             return
         }
         counter --;
+        $("#remainingText").text("")
+        $("#remainingText").append('<span id="boldtext"></span>Round(s) Remaining: ', counter)
     }
     
 }
