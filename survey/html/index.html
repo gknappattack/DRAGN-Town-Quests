@@ -10,6 +10,8 @@
 
 </head>
 <body>
+    <div class="showcase">
+        <img id="landscape" src="../css_js/landscape.png">
     <div class="header">
         <div class="heads" id="header_left">
             <img id="dragnLogo" src="../css_js/DRAGNlogo.png" alt="">
@@ -25,7 +27,7 @@
     <div class="container">
         
         <center><div class="instructions" id="instructions">
-            Thank you for participating in our research.
+            <b>Thank you for participating in our research!</b>
             <br>
             <br>
             We are researching a novel approach to generating quests within video games.
@@ -62,7 +64,7 @@
                     <form id="form-id1">
                         <label for="name">Input</label>
                         <input id="userInput" type="text">
-                        <input type="button" value="Submit" onclick="submitInput();">
+                        <input id="btn" type="button" value="Submit" onclick="submitInput();">
                     </form>
                     <span class="message" id="messageValidation" style="display: none;">PLEASE ADD INPUT :)</span>
                 </div></center>
@@ -85,6 +87,7 @@
         </div>
 
         <div id="questionairesToSend" style="display: none;">
+            <p id="yourInput"></p>
             <form class="form-id">
                 <div id="question">
                     <h4>Q1: Which prompt did you feel was most responsive to your input?</h4>
@@ -134,15 +137,14 @@
                 </div>
                 <span class="message" id="messageQuestionare" style="display: none;">PLEASE FILL ALL THE REQUIRED FIELDS :)</span>
                 <br>
-
-                <input type="button" value="Send" onclick="submitQuestionaire();">
+                <input id="btn2" type="button" value="Send" onclick="submitQuestionaire();">
             </form>
         </div>
 
 
         
     </div>
-
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>

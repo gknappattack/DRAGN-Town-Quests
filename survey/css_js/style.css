@@ -6,10 +6,36 @@
     
 }
 
+#btn{
+  font-size: 20px;
+  background-image:linear-gradient(rgb(179,217,140),rgb(153,204,102));
+}
+
+#btn2{
+  font-size: 20px;
+  background-image:linear-gradient(rgb(179,217,140),rgb(153,204,102));
+}
+
 #dragnLogo{
     height: 100px;
     width: 120px;
 }
+
+#landscape{
+    width: 100%;
+    height: 14%;
+    margin: 0px;
+    opacity: 30%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -10;
+}
+
+body{
+  font-size: 30px;
+}
+
 #question3{
     width: 50%;
 }
@@ -76,11 +102,38 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
+    background-image : linear-gradient(rgb(179,217,140),rgb(153,204,102));
+
+}
+
+#option11{
+  height: 40px;
+  width: 40px;
+}
+
+#option21{
+  height: 40px;
+  width: 40px;
+}
+
+#option31{
+  height: 40px;
+  width: 40px;
+}
+
+#option22{
+  height: 40px;
+  width: 40px;
+}
+
+#option23{
+  height: 40px;
+  width: 40px;
 }
 
 
 #questionairesToSend{
-    height: 450px;
+    height: 50%;
 }
 
 #inputFromUser{

@@ -54,6 +54,8 @@ function submitInput(){
 
         
         $("#inputFromUser").hide()
+        $("#yourInput").text("")
+        $("#yourInput").append("<b>Your Input: </b>",inputFromUser)
         resetAllFields();
     }
 }
