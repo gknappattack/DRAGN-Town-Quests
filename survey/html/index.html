@@ -52,6 +52,8 @@
             <br>
             Don't refresh the page! It will erase your prior responses.
             <br>
+            Occasionally, the Quest (the task), Title, or Dialogue can be empty. If so, treat it as if that attribute were not present.
+            <br>
             The NPC quests are generated in real-time by our AI system, so please be patient! Generation load time is ~15-30 seconds.
             <br>
             For any questions, comments, or concerns, please email trevor.clark.ashby@gmail.com
@@ -62,7 +64,7 @@
                 <center><p id="remainingText">Round(s) Remaining: 4</p>
                 <div id="inputFromUser">
                     <form id="form-id1">
-                        <label for="name">Input</label>
+                        <label for="name">Enter your text here:</label>
                         <input id="userInput" type="text">
                         <input id="btn" type="button" value="Submit" onclick="submitInput();">
                     </form>
@@ -85,6 +87,7 @@
                 <div id="thirdResponse"></div>
             </div>
         </div>
+        <a id="dragnLink" href=https://dragn.ai/>dragn.ai</a>
 
         <div id="questionairesToSend" style="display: none;">
             <p id="yourInput"></p>

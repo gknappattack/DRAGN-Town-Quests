@@ -3,7 +3,6 @@ import json
 from main import QuestEngine
 
 qe = QuestEngine()
-
 app=Flask(__name__, template_folder='./survey/html', static_folder='./survey/css_js') #instantiating flask object
 
 @app.route('/survey')
@@ -23,13 +22,18 @@ def chat():
         return jsonify(res)
     else:
         print("Sending Back to Front End. . .")
-        return jsonify(json_data)
+        successful_log = qe.log_round(json_data, True)
+
+        res = {
+            "log_success":successful_log
+        }
+        return jsonify(res)
 
 
 @app.route('/') #defining a route in the application
 def func(): #writing a function to be executed 
-       return 'PythonGeeks'
+    return 'PythonGeeks'
 
 if __name__=='__main__': #calling  main 
-       app.debug=True #setting the debugging option for the application instance
-       app.run(host="0.0.0.0", port="8080") #launching the flask's integrated development webserver
+    app.debug=True #setting the debugging option for the application instance
+    app.run(host="0.0.0.0", port="8080") #launching the flask's integrated development webserver

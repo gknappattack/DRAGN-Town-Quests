@@ -9,6 +9,7 @@ from ngram import NgramModel
 import json
 import requests
 import sys
+import os
 from datetime import datetime
 
 # Step 2 imports
@@ -111,7 +112,7 @@ class QuestEngine:
         self.dao = Neo4jDAO(uri="neo4j+s://ecdeb551.databases.neo4j.io", user="neo4j", pwd="N4Qwx1-8GrA_Ik-LgwxwldF8TdUj_6rtWpKBKAtTxds")
         # Visit https://huggingface.co/models?sort=downloads&search=Dizzykong
         self.generator = pipeline('text-generation', model='Dizzykong/gpt2-medium-commands', tokenizer='Dizzykong/gpt2-medium-commands')
-
+        
     # Functions for step 1: extracting and processing information from kg
 
 
@@ -511,77 +512,117 @@ class QuestEngine:
 
         return n_gram_quest2
     
+    def log_round(self, json_req, logging=False):
+        if logging:
+            try:
+                # if the file doesn't exist, create new, open, and append
+                path = "./response_logs/v2/"
+                theround = abs(json_req["round"])
+                if not os.path.exists(path + str(json_req["subjectID"]) + ".txt"):
+                    logfile = open(path + str(json_req["subjectID"]) + ".txt", "w")
+                    
+                    # log it in the form of [round| q1| q2| q3| p1| p2| p3| key| userinput]
+                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
+                        json_req["Question1"], json_req["Question2"], json_req["Question3"],\
+                            json_req["prevP1"], json_req["prevP2"], json_req["prevP3"],\
+                                json_req["prevKey"], json_req["prevInput"]))
+                    logfile.close()
+                else:
+                # if it does exist, open it and append
+                    logfile = open(path + str(json_req["subjectID"]) + ".txt", "a")
+                    
+                    # log it in the form of [round| q1| q2| q3| p1| p2| p3| key| userinput]
+                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
+                        json_req["Question1"], json_req["Question2"], json_req["Question3"],\
+                            json_req["prevP1"], json_req["prevP2"], json_req["prevP3"],\
+                                json_req["prevKey"], json_req["prevInput"]))
+                    logfile.close()
+
+                return True
+            except Exception as e:
+                print(e)
+                return False
+        else:
+            return True
 
     def receive_input_API(self, user_in, logging=False):
-        if logging: 
-            ## Get inputs for logging file
-            file_name = ''
+        try:
+            # if logging: 
+            #     ## Get inputs for logging file
+            #     file_name = ''
 
-            #mod_name = input("Test Moderator, please type your name: ")
-            #user_name = input("Type the name of the participant: ")
+            #     #mod_name = input("Test Moderator, please type your name: ")
+            #     #user_name = input("Type the name of the participant: ")
 
-            date = datetime.now()
-            curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
+            #     date = datetime.now()
+            #     curr_date_time = date.strftime("%d_%b_%Y_(%H_%M_%S_%f)")
 
-            #file_name = 'DRAGN-Town-Quests/response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
+            #     #file_name = 'DRAGN-Town-Quests/response_logs/' + mod_name + "_" + user_name + "_" + curr_date_time + ".txt"
 
-            log = open(file_name, "w")
-            log.write("")
-        else:
+            #     log = open(file_name, "w")
+            #     log.write("")
+            # else:
+            #     log = None
+
+            # initialize n-gram model
+            m = create_ngram_model(4, './wow_v2_cleaned.tsv')
+            random.seed(datetime.now())
+
+            #quests = []
             log = None
+            ## GPT-2
+            quest_command = self.verbalize_command(user_in, log)
+            final_quest = self.generate_gpt2_qtd(quest_command)
+            #quests.append(final_quest)
 
-        # initialize n-gram model
-        m = create_ngram_model(4, './wow_v2_cleaned.tsv')
-        random.seed(datetime.now())
+            # N-GRAM
+            n_gram_quest2 = self.generate_ngram_qtd(user_in, m)
+            #quests.append(n_gram_quest2)
 
-        #quests = []
+            # WOW
+            wow_quest_final = self.choose_random_wow_qtd()
+            #quests.append(wow_quest_final)
 
-        ## GPT-2
-        quest_command = self.verbalize_command(user_in, log)
-        final_quest = self.generate_gpt2_qtd(quest_command)
-        #quests.append(final_quest)
+            # Present both options to the user in a randomized order
+            #idx_list = [quests.index(q) for q in quests]
+            #random.shuffle(idx_list)
+            gp = final_quest.split('|')
+            ng = n_gram_quest2.split('|')
+            wow = wow_quest_final.split('|')
 
-        # N-GRAM
-        n_gram_quest2 = self.generate_ngram_qtd(user_in, m)
-        #quests.append(n_gram_quest2)
+            key = {"p1":"gp2", "p2":"ngram", "p3":"wow"}
 
-        # WOW
-        wow_quest_final = self.choose_random_wow_qtd()
-        #quests.append(wow_quest_final)
+            res = {
+                #"from":json_data["name"],
+                #"said":json_data["data"]
+                # gpt2
+                "p1": {"quest":gp[0], "title":gp[1], "dialogue":gp[2]},
+                # ngram
+                "p2": {"quest":ng[0], "title":ng[1], "dialogue":ng[2]},
+                # wow
+                "p3": {"quest":wow[0], "title":wow[1], "dialogue":wow[2]},
+                "key": key,
+                "error": False
+            }
 
-        # Present both options to the user in a randomized order
-        #idx_list = [quests.index(q) for q in quests]
-        #random.shuffle(idx_list)
-        gp = final_quest.split('|')
-        ng = n_gram_quest2.split('|')
-        wow = wow_quest_final.split('|')
+            #print('finalquest: ', final_quest)
+            #print('gp: ', gp)
 
-        key = {"p1":"gp2", "p2":"ngram", "p3":"wow"}
+            # Close dao and file
+            self.dao.close()
+            
+            # THIS LINE WAS USED TO CHECK EXCEPTION HANDLING
+            #1 / 0
+            
+            #sys.exit()
+            return res
 
-        res = {
-            #"from":json_data["name"],
-            #"said":json_data["data"]
-            # gpt2
-            "p1": {"quest":gp[0], "title":gp[1], "dialogue":gp[2]},
-            # ngram
-            "p2": {"quest":ng[0], "title":ng[1], "dialogue":ng[2]},
-            # wow
-            "p3": {"quest":wow[0], "title":wow[1], "dialogue":wow[2]},
-            "key": key
-        }
-
-        #print('finalquest: ', final_quest)
-        #print('gp: ', gp)
-
-        # Close dao and file
-        self.dao.close()
-
-        if log is not None:
-            log.close()
-
-        #sys.exit()
-        return res
-
+        except Exception as e:
+            print(e)
+            res = {
+                "error": True
+            }
+            return res
 
     def receive_input(self, logging=True):
 

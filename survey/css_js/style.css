@@ -6,6 +6,10 @@
     
 }
 
+#userInput{
+  width: 30%;
+}
+
 #btn{
   font-size: 20px;
   background-image:linear-gradient(rgb(179,217,140),rgb(153,204,102));
@@ -138,6 +142,7 @@ body{
 
 #inputFromUser{
     margin-top: 20px;
+    width: 100%;
 }
 
 #firstResponse{
