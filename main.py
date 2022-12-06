@@ -109,7 +109,12 @@ class QuestEngine:
     
     # Init function, open connection to Neo4J database
     def __init__(self):
-        self.dao = Neo4jDAO(uri="neo4j+s://ecdeb551.databases.neo4j.io", user="neo4j", pwd="N4Qwx1-8GrA_Ik-LgwxwldF8TdUj_6rtWpKBKAtTxds")
+        # Greg's Old Graph
+        #self.dao = Neo4jDAO(uri="neo4j+s://ecdeb551.databases.neo4j.io", user="neo4j", pwd="N4Qwx1-8GrA_Ik-LgwxwldF8TdUj_6rtWpKBKAtTxds")
+        
+        # New Graph
+        self.dao = Neo4jDAO(uri="neo4j+s://e2ce939e.databases.neo4j.io", user="neo4j", pwd="WHuGW7pvuk5AQLBJq1DnKSa9lbHf8064y5LNX5rMWwc")
+        
         # Visit https://huggingface.co/models?sort=downloads&search=Dizzykong
         self.generator = pipeline('text-generation', model='Dizzykong/gpt2-medium-commands', tokenizer='Dizzykong/gpt2-medium-commands')
         
@@ -589,19 +594,20 @@ class QuestEngine:
             gp = final_quest.split('|')
             ng = n_gram_quest2.split('|')
             wow = wow_quest_final.split('|')
-
-            key = {"p1":"gp2", "p2":"ngram", "p3":"wow"}
+            
+            mylist = [(gp, "gp2"), (ng, "ngram"), (wow, "wow")]
+            random.shuffle(mylist)
 
             res = {
                 #"from":json_data["name"],
                 #"said":json_data["data"]
                 # gpt2
-                "p1": {"quest":gp[0], "title":gp[1], "dialogue":gp[2]},
+                "p1": {"quest":mylist[0][0][0], "title":mylist[0][0][1], "dialogue":mylist[0][0][2]},
                 # ngram
-                "p2": {"quest":ng[0], "title":ng[1], "dialogue":ng[2]},
+                "p2": {"quest":mylist[1][0][0], "title":mylist[1][0][1], "dialogue":mylist[1][0][2]},
                 # wow
-                "p3": {"quest":wow[0], "title":wow[1], "dialogue":wow[2]},
-                "key": key,
+                "p3": {"quest":mylist[2][0][0], "title":mylist[2][0][1], "dialogue":mylist[2][0][2]},
+                "key": {"p1":mylist[0][1], "p2":mylist[1][1], "p3":mylist[2][1]},
                 "error": False
             }
 
