@@ -527,7 +527,7 @@ class QuestEngine:
                     logfile = open(path + str(json_req["subjectID"]) + ".txt", "w")
                     
                     # log it in the form of [round| q1| q2| q3| p1| p2| p3| key| userinput]
-                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
+                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
                         json_req["Question1"], json_req["Question2"], json_req["Question3"],\
                             json_req["prevP1"], json_req["prevP2"], json_req["prevP3"],\
                                 json_req["prevKey"], json_req["prevInput"]))
@@ -537,7 +537,7 @@ class QuestEngine:
                     logfile = open(path + str(json_req["subjectID"]) + ".txt", "a")
                     
                     # log it in the form of [round| q1| q2| q3| p1| p2| p3| key| userinput]
-                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
+                    logfile.write("{}|{}|{}|{}|{}|{}|{}|{}|{}\n".format(str(theround),\
                         json_req["Question1"], json_req["Question2"], json_req["Question3"],\
                             json_req["prevP1"], json_req["prevP2"], json_req["prevP3"],\
                                 json_req["prevKey"], json_req["prevInput"]))
