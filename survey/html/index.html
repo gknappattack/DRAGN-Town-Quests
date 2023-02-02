@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGN Lab Survey</title>
+    <link rel="stylesheet" href="../css_js/style.css"/>
+    <link rel="javascript" href="../css_js/app.js"/>
+
+</head>
+<body>
+    <div class="showcase">
+        <img id="landscape" src="../css_js/landscape.png">
+    <div class="header">
+        <div class="heads" id="header_left">
+            <img id="dragnLogo" src="../css_js/DRAGNlogo.png" alt="">
+        </div>
+        <div class="heads" id="header_middle">
+            <h2>DRAGN LABS SURVEY</h2>
+        </div>
+        <div class="heads" id="header_right">
+            <img id="dragnLogo" src="../css_js/DRAGNlogo.png" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <center><div class="instructions" id="instructions">
+            <b>Thank you for participating in our research!</b>
+            <br>
+            <br>
+            We are researching a novel approach to generating quests within video games.
+            In this survey, you will be "interacting" with an Non-Player Character (NPC) 4 different times. Each of these 
+            interactions should be treated as if you were walking up to a new NPC for the first time with the 
+            intention of obtaining a quest. For example, if I were to walk up to 
+            an NPC for the first time I might say something like, "How can I help you?", "I want to kill a dragon.",
+            or maybe "Can you craft me a sword?".
+            <br>
+            <br>
+            Each "Quest" consists of three parts: A "title" (the title of the quest which
+            would be added to your questlog), a "quest" (This is the task that is needing to be
+            completed for the quest), and a "dialogue" (This is the dialogue that an NPC
+            would say to you when giving you the "quest").
+            <br>
+            <br>
+            For each interaction, you'll be presented with three possible quests and asked to 
+            answer some questions about them.
+            <br>
+            <br>
+            <b><u>Things to consider:</u></b>
+            <br>
+            Don't refresh the page! It will erase your prior responses.
+            <br>
+            Occasionally, the Quest (the task), Title, or Dialogue can be empty. If so, treat it as if that attribute were not present.
+            <br>
+            The NPC quests are generated in real-time by our AI system, so please be patient! Generation load time is ~15-30 seconds.
+            <br>
+            For any questions, comments, or concerns, please email trevor.clark.ashby@gmail.com
+        </div></center>
+
+        <div id="output">
+            <div id="initialTextInOutput"><b>You've just met a new NPC. What do you want to say?</b> <br> <i>Waiting for your input. Click 'Submit' once your done.</i>
+                <center><p id="remainingText">Round(s) Remaining: 4</p>
+                <div id="inputFromUser">
+                    <form id="form-id1">
+                        <label for="name">Enter your text here:</label>
+                        <input id="userInput" type="text">
+                        <input id="btn" type="button" value="Submit" onclick="submitInput();">
+                    </form>
+                    <span class="message" id="messageValidation" style="display: none;">PLEASE ADD INPUT :)</span>
+                </div></center>
+            </div>    
+            <div id="loadingPopup" class="box" style="display: none;">
+                <p id="aiThinking">The AI is Thinking...</p>
+                <div class="bar circle-bar">
+                    <div class="circle-1 circle1"></div>
+                    <div class="circle-1 circle2"></div>
+                    <div class="circle-1 circle3"></div>
+                    <div class="circle-1 circle4"></div>
+                    <div class="circle-1 circle5"></div>
+                </div>
+            </div>
+            <div id="server_responses">
+                <div id="firstResponse"></div>
+                <div id="secondResponse"></div>
+                <div id="thirdResponse"></div>
+            </div>
+        </div>
+        <a id="dragnLink" href=https://dragn.ai/>dragn.ai</a>
+
+        <div id="questionairesToSend" style="display: none;">
+            <p id="yourInput"></p>
+            <form class="form-id">
+                <div id="question">
+                    <h4>Q1: Which prompt did you feel was most responsive to your input?</h4>
+                    <div class="radioContainer">
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option11" name="question1" value="1">
+                            <label for="option1">1</label>
+                        </div>
+                       <div class="optionsForRadio">
+                            <input type="radio" id="option21" name="question1" value="2">
+                            <label for="option2">2</label>
+                        </div>
+
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option31" name="question1" value="3">
+                            <label for="option3">3</label>
+                        </div>
+                    </div>
+                    
+                    <br>
+                </div>
+
+                <div id="question">
+                    <h4>Q2: Which prompt did you feel was most exciting/creative (i.e. Which would be the most fun to do in a game)?</h4>
+                    <div class="radioContainer">
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option21" name="question2" value="1">
+                            <label for="option1">1</label>
+                        </div>
+                       <div class="optionsForRadio">
+                            <input type="radio" id="option22" name="question2" value="2">
+                            <label for="option2">2</label>
+                        </div>
+
+                        <div class="optionsForRadio">
+                            <input type="radio" id="option23" name="question2" value="3">
+                            <label for="option3">3</label>
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+
+                <div id="question">
+                    <h4>Q3: Write 2-3 sentences explaining your answers to Q1 & Q2. (i.e. I felt that Q1 was responsive to my input because...)</h4>
+                    <textarea id="question3" rows="10" placeholder="Thoughts on question3"></textarea>
+                </div>
+                <span class="message" id="messageQuestionare" style="display: none;">PLEASE FILL ALL THE REQUIRED FIELDS :)</span>
+                <br>
+                <input id="btn2" type="button" value="Send" onclick="submitQuestionaire();">
+            </form>
+        </div>
+
+
+        
+    </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+    <script type="text/javascript"  src="../css_js/app.js" defer></script>
+    
+    <script>
+        window.onload = function() {
+            $("#form-id1").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    submitInput(); 
+                    resetAllFields();
+                    event.preventDefault();
+                    return false;
+                }
+            });
+
+            $("#form-id").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        };
+    </script>
+    
+</body>
+</html>

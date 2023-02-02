@@ -1,0 +1,117 @@
+Sample Quest #1
+User said: What do you like?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor needs built House
+Additional Tuples: [(<__main__.Neo_Node object at 0x146665370>, 'needs built', <__main__.Neo_Node object at 0x146665520>), (<__main__.Neo_Node object at 0x1466780d0>, 'built in', <__main__.Neo_Node object at 0x1466781f0>), (<__main__.Neo_Node object at 0x146678190>, 'made from', <__main__.Neo_Node object at 0x1466782b0>), (<__main__.Neo_Node object at 0x146678250>, 'made from', <__main__.Neo_Node object at 0x146678370>), (<__main__.Neo_Node object at 0x146678310>, 'made from', <__main__.Neo_Node object at 0x146678430>)]
+Quest classified as: gathering
+Final command out: Bring back House located in Sandy Beach  to create Bricks
+
+Option 0: 
+	Quest: Destroy this creature and bring me their contents ..
+	Title:  Gunstan would probably like to see what is available .
+	Dialogue:  Highmountain needs them if we are to find the Shadethisle Leaves . Speak with Hydrius at the Abyssal Breach . The Source of Our Livelihood We have done all we can . Stinging the Stingers It ' s being boarded ! Speak .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Place Terokk's Gavel on the Effigy of Terokk . 
+	Title: Rites of the Talonpriests
+	Dialogue: That gavel was once known as Beakbreaker . In his final , darkest days , Terokk used it to perform grim , damnable acts of sacrifice . It is best not to dwell on those days . Terokk was sealed away deep within the shadows to rest , and perhaps to heal . Making contact with him will take a great deal of effort , so in the meantime , allow me to tell you of his more glorious exploits . Before this wretched curse took hold . Please , place the gavel upon the effigy . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Bring back House located in Sandy Beach to create Bricks
+	Title: Bricks
+	Dialogue: I used to be a ship boy and got on a bad pirate ship once . When the ship sank , I tried to fight every single night to break the iron chains and survive , but it wouldn't help . . . I know a way to fix that . . . I love painting - and I want a permanent canvas of Bricks , like the ones you found here . All the pirates won't be able to see me . . . no . You gonna help me , Player ? If you can create one of those , then I'll give you a little bit of my time as well , okay ? 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: 2
+
+===========================
+Sample Quest #2
+User said: Do you know where I can get some gold?
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.2886751345948129, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x146665070>, 'likes to have', <__main__.Neo_Node object at 0x1466651c0>), (<__main__.Neo_Node object at 0x146665100>, 'stolen by', <__main__.Neo_Node object at 0x146665610>)]
+Quest classified as: gathering
+Final command out: Bring back 100 Gold  which is protected by a The Great Dragon of Arelind to create Gold
+
+Option 0: 
+	Quest: Bring back 100 Gold which is protected by a The Great Dragon of Arelind to create Gold
+	Title: A Little Gold
+	Dialogue: This is interesting . The Great Dragon appears to not have a protective shield . Perhaps the gold they found was not too much . . . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Search the halls for souls who have escaped the Lord Chamberlain inside the Halls of Origination Bonus Rewards Use the What ' s in the Malt ! Report to Baroness Draka at the Seat of the Chosen in Hyjal ..
+	Title:  That monster will know the archdruids ' whereabouts .
+	Dialogue:  He seeks to execute them as a sign that you are prepared .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Use the Kodohide Drum at the Marmot Den . While controlling the Marmot , poison the three kegs in the Bloodmaul Camp . When that is completed , return to Rexxar at Thunderlord Stronghold in the Blade's Edge Mountains . 
+	Title: The Smallest Creatures
+	Dialogue: The ogres , simple as they are , would notice you dispersing this poison throughout their camp . Thus , I will teach you how to enlist the help of one of nature's smallest creatures to do this task . By playing a simple rhythm on this drum , you can coax a marmot to follow your commands . There is a den of marmots near the Bloodmaul camp , to the north , down in the Daggermaw Canyon past the Circle of Blood . Once you have a marmot's aid , use it to disperse the poison to the Bloodmaul's kegs . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #0
+
+Which quest was most responsive to your input?
+User selected option #0
+
+What was your experience with each quest?
+User responded: 0
+
+===========================
+Sample Quest #3
+User said: Let's get rich from gold!
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.23570226039551587, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x14655baf0>, 'likes to have', <__main__.Neo_Node object at 0x14667fe20>), (<__main__.Neo_Node object at 0x14687e6d0>, 'stolen by', <__main__.Neo_Node object at 0x1468806d0>)]
+Quest classified as: combat
+Final command out: Kill 44 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Help with ritual enough to gain trust , then turn north , you will find them most captivating ..
+	Title:  You would do well to remember this day .
+	Dialogue:  Examining the Epitaphs Without Stone ' s knowledge , this mission shall require some extra legwork . Durotan is amassing our forces at Mount Hyjal will want to see what happens . Assess .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Kill the Cultivator . 
+	Title: Nip It in the Bud
+	Dialogue: The Catalyst Wards used to be peaceful . Pilgrims have been coming here for ages to observe the wonders of the First Ones . But this place is no longer safe . The Cultivator showed no mercy and no reason as it slew several of our brethren . You must destroy it . Other Elders would disagree with me . The other Elders are wrong . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Kill 44 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: Curse a Champion
+	Dialogue: I've seen some of Arelind's dragonlings , if you know what I mean . Not enough gold for us to afford a new hero . You'd make it a lot more if you stole gold from people that earn it . Maybe I will tell you when I find someone who can bring you back some . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #2
+
+Which quest was most responsive to your input?
+User selected option #2
+
+What was your experience with each quest?
+User responded: 2
+
+===========================

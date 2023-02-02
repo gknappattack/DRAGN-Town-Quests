@@ -1,0 +1,39 @@
+Sample Quest #1
+User said: Let's get rich from Gold!
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.23570226039551587, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x144f86310>, 'likes to have', <__main__.Neo_Node object at 0x144f865b0>), (<__main__.Neo_Node object at 0x144fa20d0>, 'stolen by', <__main__.Neo_Node object at 0x144fa21f0>)]
+Quest classified as: combat
+Final command out: Vanquish 59 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Speak with Mayla Highmountain at Thunder Totem . 
+	Title: The High Chieftain
+	Dialogue: I understand what Ebonhorn has been trying to tell me for a while now . Our people do not need a hammer , we need a leader . One willing to stand against any threat , even if they are terrified to do so . And between you and me , I am definitely terrified , but resolved . Let us return to Thunder Totem and prepare ourselves for war . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Vanquish 59 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: A Dish for Ardenweald
+	Dialogue: With all that's been gonna happen since , there's no more time to waste . I know you don't even care about us , but I don't care either . The Silver Covenant is the threat I want to face , Player . They will pay what they can for their worthless lackeys if they need to be paid . With the debt cleared out from their coffers , their leader will be no more . You can deal with their lackeys , Player . . . those goldmines have been mined by Arelind the Merciless , and he knows how to handle a good bounty . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Attack on the Tower Here ' s the only way to find Marshal Valentine ..
+	Title:  And you ' ll take one bite and fall deathly ill ! The Ancient Shadowmoon Spirit at the Altar of Damnation in Shadowmoon Valley wants you to retrieve the Abyssal Scepter from Stormsong Monastery .
+	Dialogue:  I must have answers . They will report to you and .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: 1
+
+===========================

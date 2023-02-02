@@ -1,0 +1,78 @@
+Sample Quest #1
+User said: I want to kill a dragon
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.23570226039551587]
+Best matching tuples: Trevor wants killed The Great Dragon of Arelind
+Additional Tuples: [(<__main__.Neo_Node object at 0x141b72a90>, 'wants killed', <__main__.Neo_Node object at 0x141b72bb0>), (<__main__.Neo_Node object at 0x141b72b50>, 'lives by', <__main__.Neo_Node object at 0x141b72c70>), (<__main__.Neo_Node object at 0x141b72c10>, 'lives in', <__main__.Neo_Node object at 0x141b72d30>), (<__main__.Neo_Node object at 0x141b72d90>, 'comes from', <__main__.Neo_Node object at 0x141b72eb0>), (<__main__.Neo_Node object at 0x141b72e50>, 'stolen by', <__main__.Neo_Node object at 0x141b72f70>)]
+Quest classified as: combat
+Final command out: Kill The Great Dragon of Arelind located in Arelind to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Speak with the Deathly Usher north of the Rise of the Defiler . Once atop the Rise , destroy Razelikh's body , then use the Stone Knife of Sealing to imprison his soul . 
+	Title: You Are Rakh'likh , Demon
+	Dialogue: Hero , listen well . First , we must travel to the Deathly Usher , who waits at the northern foot of the Rise of the Defiler , to our northeast . The usher will take us to the top of the rise . Once there , I need you to help me defeat Razelikh , for I fear that I am not strong enough to defeat him alone . Most importantly , I need you to hold the stone knife , and do not use it until I tell you to . The knife will trap Razelikh's soul within its new , eternal prison . If we succeed , speak with Wazzik . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Kill The Great Dragon of Arelind located in Arelind to obtain Gold stolen by The Great Dragon of Arelind
+	Title: A Relic of Power
+	Dialogue: Now what is much more pressing still is the Great Dragon of Arelind . It is rumored that she was an expert at wielding magic in combat , but a great war broke out , and she was slain by a powerful dragon . When you travel to Arelind , search the Ruins of Anselind for it's remnants . Bring me the relic of power to grant me my wish for long . It would forever change our relationship with Azeroth ! 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Create the Titan Activation Device ..
+	Title:  Kill 9 Theramore Infiltrators , then return to me with their blessing .
+	Dialogue:  . Steer clear of the bull elekk ; their ivory isn ' t an easy task , and together we will spill the blood of gnome . They ' ll be more than enough to send the guards running ! Assist Alliance .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Because.
+
+===========================
+Sample Quest #2
+User said: Let's get rich!
+Fact strings: ['Trevor likes to have Gold', 'Trevor needs built House', 'Trevor does not have Iron', 'Trevor requires Deer Hides', 'Trevor wants hunted Deer', 'Trevor hungry for Meat', 'Trevor wants killed The Great Dragon of Arelind']
+Cosine Similarity Scores: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Best matching tuples: Trevor likes to have Gold
+Additional Tuples: [(<__main__.Neo_Node object at 0x141b7d820>, 'likes to have', <__main__.Neo_Node object at 0x141b664f0>), (<__main__.Neo_Node object at 0x141b7fc10>, 'stolen by', <__main__.Neo_Node object at 0x141b7fc40>)]
+Quest classified as: combat
+Final command out: Slay 37 Gold  to obtain Gold stolen by The Great Dragon of Arelind
+
+Option 0: 
+	Quest: Offer a sample of Thunderbrew's Jungle Punch to Hemet Nesingwary , Hadrius Harlowe , and Tamara Wobblesprocket , then return to Grimbooze Thunderbrew at the Nesingwary Base Camp . 
+	Title: The Taste Test
+	Dialogue: And now for the moment of truth ! <Grimbooze chuckles . >I've always wanted to say that . Normally , I'd debut a new drink at a banquet , but we can't have one in the middle of the jungle . Instead , just take samples to a few trusted friends and return with their comments . Let's see , we'll definitely want Hemet Nesingwary's opinion , and Hadrius Harlowe's , too . They're here in camp . You'll want to head over to Lakeside Landing , near the center of the Basin and offer Tamara Wobblesprocket a taste . 
+Generation method: 2 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 1: 
+	Quest: Slay 37 Gold to obtain Gold stolen by The Great Dragon of Arelind
+	Title: The Great Dragon Of Arelind
+	Dialogue: Since this morning my warriors have been performing martial arts in a cave on the shores of the river . Arelind the Sky-Reaver is a powerful and cunning dragon who has been stealing draenei gold and jewelry from my workers . We must find a way to stop him before he is more powerful ! Kill him and recover any jewelry he is carrying . Use it to bolster our defenses in the future and show our king that the earth and sky protect us all . 
+Generation method: 0 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+
+Option 2: 
+	Quest: Explore Torghast Baine is safe , and puppy - men again ..
+	Title:  Bring 25 Valiant ' s Seals to signify you ' re interested go to Zul ' Gurub were attempting to perform a hideous , horrible ritual .
+	Dialogue:  Retrieve the Ancient Dragonforged Blades tome from Magister Hathorel . He howls and stares into the cave . . According to the .
+Generation method: 1 (0 = DRAGN-Town, 1 = N-Gram, 2 = WoW)
+
+Which quest is most satisfying to you?
+User selected option #1
+
+Which quest was most responsive to your input?
+User selected option #1
+
+What was your experience with each quest?
+User responded: Because
+
+===========================
