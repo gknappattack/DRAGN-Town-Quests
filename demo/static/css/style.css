@@ -1,0 +1,139 @@
+body {
+    margin:0px;
+    padding:0px;
+}
+
+.header {
+    width: 650px;
+    margin:auto;
+    color: rgb(214, 62, 194, 0.8);
+    font-size: 15px;
+    display:grid;
+    grid-template-columns: 150px 500px;
+    
+}
+
+.header img {
+    height: 150px;
+    margin:auto;
+}
+
+.header h1 {
+    margin-left: 50px;
+}
+
+.instructions {
+    color: white;
+    margin: auto;
+    width: 50%;
+}
+
+.window {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: rgb(40, 42, 43);
+    padding-bottom: 100%;
+}
+
+.chat_console {
+    margin: auto;
+    padding-top: 10px;
+    width: 50%;
+    height: fit-content;
+    background-color: rgb(98, 100, 102);
+    padding-bottom: 10px;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+.user_chat {
+    background-color: rgba(197, 54, 178, 0.8);
+    width:fit-content;
+    margin-left: 10px;
+    padding:7px;
+    border-radius: 15px 15px 15px 0px;
+    color: white;
+    max-width: 40%;
+}
+
+.npc_chat {
+    background-color: rgb(88, 19, 73, 0.8);
+    width:fit-content;
+    padding:7px;
+    padding-right: -10px;
+    border-radius: 15px 15px 0px 15px;
+    margin-left: auto;
+    margin-right: 10px;
+    color: white;
+    max-width: 40%;
+}
+
+.npc_quest {
+    width:fit-content;
+    margin-left:auto;
+    margin-right: 10px;
+    background-color: burlywood;
+    padding: 7px;
+    max-width: 50%;
+    min-width: 200px;
+    margin-top: 15px;
+    background-image: url("../imgs/OIP (1).jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.npc_quest h1 {
+    margin: 0px;
+    margin-left: 10px;
+    font-style: italic;
+    font-size: 25px;
+}
+.npc_quest p {
+    margin: 0px;
+    margin-left: 10px;
+}
+
+hr {
+    width:35%;
+}
+
+.input_field {
+    border: solid aliceblue;
+    width:30%;
+    border-radius: 15px;
+    border-width: 1px;
+    padding:2px;
+    margin:auto;
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 93% 7%;
+}
+
+.input_field input {
+    margin-left: 6px;
+    background-color: rgb(40, 42, 43);
+    border: none;
+    color: white;
+    width:93%;
+}
+
+.input_field input:focus {
+    outline:none;
+}
+
+.input_field button {
+    border-radius: 20px;
+    border-style: none;
+    font-weight: bold;
+    background-color: rgb(214, 62, 194, 0.8);
+    color: white;
+    padding: 7px;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.input_field button:hover {
+    cursor: pointer;
+}

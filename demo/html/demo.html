@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>DRAGN-Town Demo</title>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <script src="../static/js/app.js"></script>
+    <link rel="icon" href="../static/imgs/DRAGNlogo.png">
+</head>
+<body onload="onLoad()">
+    <div class="window">
+        <div class="header">
+            <img src="../static/imgs/DRAGNlogo.png">
+            <h1>Personalized Quest and Dialogue Generation in Role-Playing Games: A Knowledge Graph- and Language Model-based Approach</h1>
+        </div>
+        <div class="instructions">
+            Welcome to our demo. This will be a simulation with a Non Player Character (NPC) within our world.
+            When talking to the NPC, inquire about potential tasks that they would like done. "For example, do you have something for me to collect?"
+        </div>
+        <hr>
+        <div class="chat_console" id="chat_console">
+            <div class="user_chat">
+                Hi, how can I help you?
+            </div>
+            <div class="npc_chat">
+                I am not good. I need you to help me find my dog! The last place I saw him was in the forest east of here. Will you help me?
+            </div>
+            <div class="npc_quest">
+                <h1>FIND THE DOG</h1>
+                <p>Help the NPC find his dog.</p>
+                <br>
+                <h1>DESCRIPTION</h1>
+                <p>I am not good. I need you to help me find my dog! The last place I saw him was in the forest east of here. Will you help me?</p>
+            </div>
+        </div>
+        <hr>
+        <div class="input_field">
+            <input type="text" placeholder="Type your message here" id="user_input"><button onclick="sendMessage()">>></button>
+        </div>
+    </div>
+
+</body>
