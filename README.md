@@ -71,6 +71,23 @@ What was your experience with each quest?: I really like that.....
 
 This process repeats until the indicated number of quests has been generated. The program then exits and can be run again for the next user.
 
+## Usage: Survey
+The following command can be used to run the survey api used to collect responses. 
+
+```
+python launch_server_api.py
+```
+<span style="color:red">**Talk about the survey**</span>
+
+## Usage: Demo
+The following command can be used to run the demo which was used at the interactivity display.
+```
+python launch_demo_api.py
+```
+This demo acts as a form of messaging system with an NPC, which will response with the quest "Dialogue" and "attach" the generated quest to their message. 
+
+<img src="./DemoImg.png">
+
 ## Future Work
 
 DRAGN-Town works with a pre-made, author-created knowledge graph which controls what exists in the world. This limits the ability for the engine to match things that the user seeks that are not "existing" currently in the world. For example, if the user says "I want to mine iron" but iron does not exist in the knowledge graph, the engine will have a difficult time creating a relevant quest from the graph.
